@@ -1,0 +1,54 @@
+Method in Tuple data structure 
+------------------------------
+1) count method:
+----------------
+t = (10, 20, 10, 10, 20)   This method returns the number of occurrences of specified item in the tuple.  
+print(t.count(10))               
+
+2) Index method: returns index of first occurrence of the given element
+----------------
+t = (10, 20, 30)        
+print(t.index(30))  
+
+Value error: if the value didn't contain in the list then we can get value error
+-----------                            (or)
+t = (10, 20, 30)          If the specified element is not available, then we will get ValueError.          
+print(t.index(80))  
+
+Can I add elements to this tuple
+---------------------------------
+t = (11, 22, [33, 44], 55, 66)                     Yes can add elements to list in tuple.
+t[2].append(77)                            In second index position list is available, to that we can add the data
+print(t)                         
+
+Method in set data structure  :- if we want to create empty set.we can use  c = set{}
+----------------------------
+1) Add method :This method adds element to the set. 
+--------------
+s = {10, 20, 30}    
+s.add(40) 
+print(s)  
+
+2)Remove method:-This method removes specified element from the set.  
+---------------
+s = {40, 10, 30, 20}  If the specified element not present in the set, then we will get KeyError  
+s.remove(30)  
+print(s)   
+
+3) clear method:- clear() is a method in set class, we should access this method by using 
+---------------- set object.  This method removes all elements from the set.  
+
+s = {10,20,30}    
+print(s)    
+s.clear()    
+print(s)   
+Membership operators: (in and not in)                        Important point:
+-------------------------------------                        ----------------      
+s = {1, 2, 3, 'daniel'}                    # if we want use duplicate value, we can use list data structure.
+print(s)                                   # if you don't want use duplicate value, we can use set data structure. 
+print(1 in s)    
+print('z' in s)
+set comprehensions 
+------------------
+s = {x*x  for x in range(5)}  
+print(s)

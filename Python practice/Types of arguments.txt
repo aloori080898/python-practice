@@ -1,0 +1,42 @@
+1)Positional argument
+---------------------
+Example 1
+---------
+def m1(a,b):
+    print("a value is:",a)
+    print("b value is:",b)
+    print("sum of the value is:",a+b) 
+m1(10,20)              if we assign value to variable then it is called keyword argument 
+                                 ex:-(a=10,b=20)
+Example 2
+---------
+def m1(a,b):
+    print("a value is:",a)
+    print("b value is:",b)
+m1(10,20)
+
+2)Keyword argument
+----------------
+def m1(a,b):            Here also we can assign the value (a=1,b=4)
+    print("a value is:",a)
+    print("b value is:",b)
+m1(a=10,20)
+Unexpected keyword error
+------------------------
+def m1(a=10,b=20):
+    print("a value is:",a)
+    print("b value is:",b)
+    print("sum of the value is:",a+b) 
+m1(a=10,b=20,c=30) 
+
+3) Default argument:- we assign values. if we give different values it be the output. 
+-------------------
+def m1(a=1,b=4):
+    print("a value is:",a)
+    print("b value is:",b)
+m1(10,40)
+4)variable length argument
+--------------------------
+def m1(*p):
+    print("a value is:",*p)
+m1(10,40)

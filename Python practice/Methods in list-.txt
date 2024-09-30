@@ -1,0 +1,41 @@
+Methods in list:-
+---------------
+1)count method
+------------
+a = [10,20,30,40,50,60,70]
+b = a.count(10)
+print(b)
+2)Append method
+-------------
+a = [10,20,30,40,]
+a.append(50)
+print(a)
+3)Insert method
+-------------
+a = [10,20,30,40,]
+a.insert(0,50)
+print(a)
+4)Remove method
+-------------
+a = [10,20,30,40,]
+a.remove(10)
+print(a)
+5)Reverse method
+--------------
+a = [10,20,30,40,]
+a.reverse()
+print(a)
+6)Sort method
+------------
+a = [50,10,20,30,40]
+a.sort()
+print(a)
+star operator
+--------------
+a = [10,20,30,40]
+print(a*2)
+Membership operator
+--------------------
+students = ["Raju","Praveen","Vamshi"]
+print("Raju" in students)
+print("komal" in students)

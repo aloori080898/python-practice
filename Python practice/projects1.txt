@@ -1,0 +1,1406 @@
+from turtle import *
+import colorsys as cs
+bgcolor('black')
+hideturtle()
+goto(0,-50)
+speed(0)
+tracer(10)
+width(2)
+for i in range(24):
+    for j in range(14):
+        color(cs.hsv_to_rgb(j/15,i/25,1))
+        right(90)
+        circle(200-i*4,90)
+        left(90)
+        circle(200- i * 4,90)
+        right(180)
+        circle(50,24)
+done()
+-------------------------------------------------------------------------------------------
+print("Wellcome to quiz game !!")           Quiz Game (Easy):
+print('NOTE: if your spelling is incorrect then it is considered as wrong answer')
+score = 0
+question_no = 0
+playing = input('Do you want to play ? ').lower()
+if playing == 'yes':
+    question_no += 1
+    ques = input(f'\n{question_no}. what does CPU stand for? ').lower()
+    if ques == 'central processing unit':
+        score +=1
+        print('correct! you got 1 point')
+        
+    else:
+        print('Incorrect!')
+        print(f'current answer is --> central processing unit')
+
+    question_no += 1
+    ques = input(f'\n{question_no}. what does GPU stand for? ').lower()
+    
+    if ques == 'graphics processing unit':
+        score +=1
+        print('correct! you got 1 point')
+        
+    else:
+        print('Incorrect!')
+        print(f'current answer is --> graphics processing unit')
+
+    question_no += 1
+    ques = input(f'\n{question_no}. what does RAM stand for? ').lower()
+    
+    if ques == 'random access memory':
+        score +=1
+        print('correct! you got 1 point')
+        
+    else:
+        print('Incorrect!')
+        print(f'current answer is --> random access memory')
+
+    question_no += 1
+    ques = input(f'\n{question_no}. what does PSU stand for? ').lower()
+    
+    if ques == 'power supply unit':
+        score +=1
+        print('correct! you got 1 point')
+        
+    else:
+        print('Incorrect!')
+        print(f'current answer is --> power supply unit')
+
+    question_no += 1
+    ques = input(f'\n{question_no}. what does ROM stand for? ').lower()
+    
+    if ques == 'read only memory':
+        score +=1
+        print('correct! you got 1 point')
+        
+    else:
+        print('Incorrect!')
+        print(f'current answer is --> read only memory')
+
+
+else:
+    print('thankyou you are out of a game.')         qizzzzzz
+    quit()
+
+print(f'\nnumber of question is {question_no}')
+print(f'your score is {score}')
+try:
+    percentage = (score *100)/question_no
+except ZeroDivisionError:
+    print('0% quetions are correct')
+
+print(f'{percentage}% questions are correct.')
+-------------------------------------------------------------------------------------------
+# 1 to 100 units - 1.5Rs
+# 101 to 200 units - 2.5Rs     Generating current bill calculating
+# 201 to 300 units - 4Rs
+# 300 to 350 units - 5Rs
+# Above 350 - Fixed charge 1500Rs
+
+units = float(input("Enter the Unit Consumed: "))
+
+if units > 0 and units <= 100:
+    payment = units * 1.5
+    fixedCharge = 25 # Extra charge
+elif units > 100 and units <= 200:
+    payment = (100 * 1.5) + (units - 100) * 2.5
+    fixedCharge = 50 # Extra charge
+elif units > 200 and units <= 300:
+    payment =  (100 * 1.5) + (200 - 100) * 2.5 + (units - 200) * 4
+    fixedCharge = 75 # Extra charge
+elif units > 300 and units <= 350:
+    payment = (100 * 1.5) + (200 - 100) * 2.5 + (300 - 200) * 4 + (units - 300) * 5   
+    fixedCharge = 100 # Extra charge
+else:
+    payment = 0
+    fixedCharge = 1500
+
+total = payment + fixedCharge
+
+print(f"Your Electricity Bill amount is {total:.2f}")
+-------------------------------------------------------------------------------------------
+import random                                Number Guessing Game (Easy)
+
+top_of_range = input("Type a number: ")
+
+if top_of_range.isdigit():
+    top_of_range = int(top_of_range)
+
+    if top_of_range <= 0:
+        print('Please type a number larger than 0 next time.')
+        quit()
+else:
+    print('Please type a number next time.')
+    quit()
+
+random_number = random.randint(0, top_of_range)
+guesses = 0
+
+while True:
+    guesses += 1
+    user_guess = input("Make a guess: ")
+    if user_guess.isdigit():
+        user_guess = int(user_guess)
+    else:
+        print('Please type a number next time.')
+        continue
+
+    if user_guess == random_number:
+        print("You got it!")
+        break
+    elif user_guess > random_number:
+        print("You were above the number!")
+    else:
+        print("You were below the number!")
+
+print("You got it in", guesses, "guesses")
+-------------------------------------------------------------------------------------------
+import random                          rock_paper_scissors.py
+
+user_wins = 0
+computer_wins = 0
+
+options = ["rock", "paper", "scissors"]
+
+while True:
+    user_input = input("Type Rock/Paper/Scissors or Q to quit: ").lower()
+    if user_input == "q":
+        break
+
+    if user_input not in options:
+        continue
+
+    random_number = random.randint(0, 2)
+    # rock: 0, paper: 1, scissors: 2
+    computer_pick = options[random_number]
+    print("Computer picked", computer_pick + ".")
+
+    if user_input == "rock" and computer_pick == "scissors":
+        print("You won!")
+        user_wins += 1
+
+    elif user_input == "paper" and computer_pick == "rock":
+        print("You won!")
+        user_wins += 1
+
+    elif user_input == "scissors" and computer_pick == "paper":
+        print("You won!")
+        user_wins += 1
+
+    else:
+        print("You lost!")
+        computer_wins += 1
+
+print("You won", user_wins, "times.")
+print("The computer won", computer_wins, "times.")
+print("Goodbye!")
+-------------------------------------------------------------------------------------------
+name = input("Type your name: ")                 Choose Your Own Adventure Game (Easy) 
+print("Welcome", name, "to this adventure!")
+
+answer = input(
+    "You are on a dirt road, it has come to an end and you can go left or right. Which way would you like to go? ").lower()
+
+if answer == "left":
+    answer = input(
+        "You come to a river, you can walk around it or swim accross? Type walk to walk around and swim to swim accross: ")
+
+    if answer == "swim":
+        print("You swam acrross and were eaten by an alligator.")
+    elif answer == "walk":
+        print("You walked for many miles, ran out of water and you lost the game.")
+    else:
+        print('Not a valid option. You lose.')
+
+elif answer == "right":
+    answer = input(
+        "You come to a bridge, it looks wobbly, do you want to cross it or head back (cross/back)? ")
+
+    if answer == "back":
+        print("You go back and lose.")
+    elif answer == "cross":
+        answer = input(
+            "You cross the bridge and meet a stranger. Do you talk to them (yes/no)? ")
+
+        if answer == "yes":
+            print("You talk to the stanger and they give you gold. You WIN!")
+        elif answer == "no":
+            print("You ignore the stranger and they are offended and you lose.")
+        else:
+            print('Not a valid option. You lose.')
+    else:
+        print('Not a valid option. You lose.')
+
+else:
+    print('Not a valid option. You lose.')
+
+print("Thank you for trying", name)
+-------------------------------------------------------------------------------------------
+from cryptography.fernet import Fernet              cryptography.fernet 
+'''
+def write_key():
+    key = Fernet.generate_key()
+    with open("key.key", "wb") as key_file:
+        key_file.write(key)'''
+
+
+def load_key():
+    file = open("key.key", "rb")
+    key = file.read()
+    file.close()
+    return key
+
+
+key = load_key()
+fer = Fernet(key)
+
+
+def view():
+    with open('passwords.txt', 'r') as f:
+        for line in f.readlines():
+            data = line.rstrip()
+            user, passw = data.split("|")
+            print("User:", user, "| Password:",
+                  fer.decrypt(passw.encode()).decode())
+
+
+def add():
+    name = input('Account Name: ')
+    pwd = input("Password: ")
+
+    with open('passwords.txt', 'a') as f:
+        f.write(name + "|" + fer.encrypt(pwd.encode()).decode() + "\n")
+
+
+while True:
+    mode = input(
+        "Would you like to add a new password or view existing ones (view, add), press q to quit? ").lower()
+    if mode == "q":
+        break
+
+    if mode == "view":
+        view()
+    elif mode == "add":
+        add()
+    else:
+        print("Invalid mode.")
+        continue
+-------------------------------------------------------------------------------------------
+                                  PIG (Medium)
+import random
+
+def roll():
+    min_value = 1
+    max_value = 6
+    roll = random.randint(min_value, max_value)
+
+    return roll
+
+
+while True:
+    players = input("Enter the number of players (2 - 4): ")
+    if players.isdigit():
+        players = int(players)
+        if 2 <= players <= 4:
+            break
+        else:
+            print("Must be between 2 - 4 players.")
+    else:
+        print("Invalid, try again.")
+
+max_score = 50
+player_scores = [0 for _ in range(players)]
+
+while max(player_scores) < max_score:
+    for player_idx in range(players):
+        print("\nPlayer number", player_idx + 1, "turn has just started!")
+        print("Your total score is:", player_scores[player_idx], "\n")
+        current_score = 0
+
+        while True:
+            should_roll = input("Would you like to roll (y)? ")
+            if should_roll.lower() != "y":
+                break
+
+            value = roll()
+            if value == 1:
+                print("You rolled a 1! Turn done!")
+                current_score = 0
+                break
+            else:
+                current_score += value
+                print("You rolled a:", value)
+
+            print("Your score is:", current_score)
+
+        player_scores[player_idx] += current_score
+        print("Your total score is:", player_scores[player_idx])
+
+max_score = max(player_scores)
+winning_idx = player_scores.index(max_score)
+print("Player number", winning_idx + 1,
+      "is the winner with a score of:", max_score)
+-------------------------------------------------------------------------------------------
+with open("story.txt", "r") as f:         Madlibs Generator (Medium)
+    story = f.read()
+
+words = set()
+start_of_word = -1
+
+target_start = "<"
+target_end = ">"
+
+for i, char in enumerate(story):
+    if char == target_start:
+        start_of_word = i
+
+    if char == target_end and start_of_word != -1:
+        word = story[start_of_word: i + 1]
+        words.add(word)
+        start_of_word = -1
+
+answers = {}
+
+for word in words:
+    answer = input("Enter a word for " + word + ": ")
+    answers[word] = answer
+
+for word in words:
+    story = story.replace(word, answers[word])
+
+print(story)
+-------------------------------------------------------------------------------------------
+                                    Timed Math Challenge
+import random
+import time
+
+OPERATORS = ["+", "-", "*"]
+MIN_OPERAND = 3
+MAX_OPERAND = 12
+TOTAL_PROBLEMS = 10
+
+
+def generate_problem():
+    left = random.randint(MIN_OPERAND, MAX_OPERAND)
+    right = random.randint(MIN_OPERAND, MAX_OPERAND)
+    operator = random.choice(OPERATORS)
+
+    expr = str(left) + " " + operator + " " + str(right)
+    answer = eval(expr)
+    return expr, answer
+
+
+wrong = 0
+input("Press enter to start!")
+print("----------------------")
+
+start_time = time.time()
+
+for i in range(TOTAL_PROBLEMS):
+    expr, answer = generate_problem()
+    while True:
+        guess = input("Problem #" + str(i + 1) + ": " + expr + " = ")
+        if guess == str(answer):
+            break
+        wrong += 1
+
+end_time = time.time()
+total_time = round(end_time - start_time, 2)
+
+print("----------------------")
+print("Nice work! You finished in", total_time, "seconds!")
+-------------------------------------------------------------------------------------------
+import random              Slot Machine (Medium)
+
+MAX_LINES = 3
+MAX_BET = 100
+MIN_BET = 1
+
+ROWS = 3
+COLS = 3
+
+symbol_count = {
+    "A": 2,
+    "B": 4,
+    "C": 6,
+    "D": 8
+}
+
+symbol_value = {
+    "A": 5,
+    "B": 4,
+    "C": 3,
+    "D": 2
+}
+
+
+def check_winnings(columns, lines, bet, values):
+    winnings = 0
+    winning_lines = []
+    for line in range(lines):
+        symbol = columns[0][line]
+        for column in columns:
+            symbol_to_check = column[line]
+            if symbol != symbol_to_check:
+                break
+        else:
+            winnings += values[symbol] * bet
+            winning_lines.append(line + 1)
+
+    return winnings, winning_lines
+
+
+def get_slot_machine_spin(rows, cols, symbols):
+    all_symbols = []
+    for symbol, symbol_count in symbols.items():
+        for _ in range(symbol_count):
+            all_symbols.append(symbol)
+
+    columns = []
+    for _ in range(cols):
+        column = []
+        current_symbols = all_symbols[:]
+        for _ in range(rows):
+            value = random.choice(current_symbols)
+            current_symbols.remove(value)
+            column.append(value)
+
+        columns.append(column)
+
+    return columns
+
+
+def print_slot_machine(columns):
+    for row in range(len(columns[0])):
+        for i, column in enumerate(columns):
+            if i != len(columns) - 1:
+                print(column[row], end=" | ")
+            else:
+                print(column[row], end="")
+
+        print()
+
+
+def deposit():
+    while True:
+        amount = input("What would you like to deposit? $")
+        if amount.isdigit():
+            amount = int(amount)
+            if amount > 0:
+                break
+            else:
+                print("Amount must be greater than 0.")
+        else:
+            print("Please enter a number.")
+
+    return amount
+
+
+def get_number_of_lines():
+    while True:
+        lines = input(
+            "Enter the number of lines to bet on (1-" + str(MAX_LINES) + ")? ")
+        if lines.isdigit():
+            lines = int(lines)
+            if 1 <= lines <= MAX_LINES:
+                break
+            else:
+                print("Enter a valid number of lines.")
+        else:
+            print("Please enter a number.")
+
+    return lines
+
+
+def get_bet():
+    while True:
+        amount = input("What would you like to bet on each line? $")
+        if amount.isdigit():
+            amount = int(amount)
+            if MIN_BET <= amount <= MAX_BET:
+                break
+            else:
+                print(f"Amount must be between ${MIN_BET} - ${MAX_BET}.")
+        else:
+            print("Please enter a number.")
+
+    return amount
+
+
+def spin(balance):
+    lines = get_number_of_lines()
+    while True:
+        bet = get_bet()
+        total_bet = bet * lines
+
+        if total_bet > balance:
+            print(
+                f"You do not have enough to bet that amount, your current balance is: ${balance}")
+        else:
+            break
+
+    print(
+        f"You are betting ${bet} on {lines} lines. Total bet is equal to: ${total_bet}")
+
+    slots = get_slot_machine_spin(ROWS, COLS, symbol_count)
+    print_slot_machine(slots)
+    winnings, winning_lines = check_winnings(slots, lines, bet, symbol_value)
+    print(f"You won ${winnings}.")
+    print(f"You won on lines:", *winning_lines)
+    return winnings - total_bet
+
+
+def main():
+    balance = deposit()
+    while True:
+        print(f"Current balance is ${balance}")
+        answer = input("Press enter to play (q to quit).")
+        if answer == "q":
+            break
+        balance += spin(balance)
+
+    print(f"You left with ${balance}")
+
+
+main()
+-------------------------------------------------------------------------------------------
+                              Turtle Racing (Medium)
+
+import turtle
+import time
+import random
+
+WIDTH, HEIGHT = 700, 600
+COLORS = ['red', 'green', 'blue', 'orange', 'yellow', 'black', 'purple', 'pink', 'brown', 'cyan']
+
+def get_number_of_racers():
+	racers = 0
+	while True:
+		racers = input('Enter the number of racers (2 - 10): ')
+		if racers.isdigit():
+			racers = int(racers)
+		else:
+			print('Input is not numeric... Try Again!')
+			continue
+
+		if 2 <= racers <= 10:
+			return racers
+		else:
+			print('Number not in range 2-10. Try Again!')
+
+def race(colors):
+	turtles = create_turtles(colors)
+
+	while True:
+		for racer in turtles:
+			distance = random.randrange(1, 20)
+			racer.forward(distance)
+
+			x, y = racer.pos()
+			if y >= HEIGHT // 2 - 10:
+				return colors[turtles.index(racer)]
+
+def create_turtles(colors):
+	turtles = []
+	spacingx = WIDTH // (len(colors) + 1)
+	for i, color in enumerate(colors):
+		racer = turtle.Turtle()
+		racer.color(color)
+		racer.shape('turtle')
+		racer.left(90)
+		racer.penup()
+		racer.setpos(-WIDTH//2 + (i + 1) * spacingx, -HEIGHT//2 + 20)
+		racer.pendown()
+		turtles.append(racer)
+
+	return turtles
+
+def init_turtle():
+	screen = turtle.Screen()
+	screen.setup(WIDTH, HEIGHT)
+	screen.title('Turtle Racing!')
+
+racers = get_number_of_racers()
+init_turtle()
+
+random.shuffle(COLORS)
+colors = COLORS[:racers]
+
+winner = race(colors)
+print("The winner is the turtle with color:", winner)
+time.sleep(5)
+-------------------------------------------------------------------------------------------
+                        WPM Typing Test (Medium)
+import curses
+from curses import wrapper
+import time
+import random
+
+
+def start_screen(stdscr):
+	stdscr.clear()
+	stdscr.addstr("Welcome to the Speed Typing Test!")
+	stdscr.addstr("\nPress any key to begin!")
+	stdscr.refresh()
+	stdscr.getkey()
+
+def display_text(stdscr, target, current, wpm=0):
+	stdscr.addstr(target)
+	stdscr.addstr(1, 0, f"WPM: {wpm}")
+
+	for i, char in enumerate(current):
+		correct_char = target[i]
+		color = curses.color_pair(1)
+		if char != correct_char:
+			color = curses.color_pair(2)
+
+		stdscr.addstr(0, i, char, color)
+
+def load_text():
+	with open("text.txt", "r") as f:
+		lines = f.readlines()
+		return random.choice(lines).strip()
+
+def wpm_test(stdscr):
+	target_text = load_text()
+	current_text = []
+	wpm = 0
+	start_time = time.time()
+	stdscr.nodelay(True)
+
+	while True:
+		time_elapsed = max(time.time() - start_time, 1)
+		wpm = round((len(current_text) / (time_elapsed / 60)) / 5)
+
+		stdscr.clear()
+		display_text(stdscr, target_text, current_text, wpm)
+		stdscr.refresh()
+
+		if "".join(current_text) == target_text:
+			stdscr.nodelay(False)
+			break
+
+		try:
+			key = stdscr.getkey()
+		except:
+			continue
+
+		if ord(key) == 27:
+			break
+
+		if key in ("KEY_BACKSPACE", '\b', "\x7f"):
+			if len(current_text) > 0:
+				current_text.pop()
+		elif len(current_text) < len(target_text):
+			current_text.append(key)
+
+
+def main(stdscr):
+	curses.init_pair(1, curses.COLOR_GREEN, curses.COLOR_BLACK)
+	curses.init_pair(2, curses.COLOR_RED, curses.COLOR_BLACK)
+	curses.init_pair(3, curses.COLOR_WHITE, curses.COLOR_BLACK)
+
+	start_screen(stdscr)
+	while True:
+		wpm_test(stdscr)
+		stdscr.addstr(2, 0, "You completed the text! Press any key to continue...")
+		key = stdscr.getkey()
+
+		if ord(key) == 27:
+			break
+
+wrapper(main)
+-------------------------------------------------------------------------------------------
+                                       Shortest Path Finder (Advanced)
+
+
+import curses
+from curses import wrapper
+import queue
+import time
+
+maze = [
+    ["#", "O", "#", "#", "#", "#", "#", "#", "#"],
+    ["#", " ", " ", " ", " ", " ", " ", " ", "#"],
+    ["#", " ", "#", "#", " ", "#", "#", " ", "#"],
+    ["#", " ", "#", " ", " ", " ", "#", " ", "#"],
+    ["#", " ", "#", " ", "#", " ", "#", " ", "#"],
+    ["#", " ", "#", " ", "#", " ", "#", " ", "#"],
+    ["#", " ", "#", " ", "#", " ", "#", "#", "#"],
+    ["#", " ", " ", " ", " ", " ", " ", " ", "#"],
+    ["#", "#", "#", "#", "#", "#", "#", "X", "#"]
+]
+
+
+def print_maze(maze, stdscr, path=[]):
+    BLUE = curses.color_pair(1)
+    RED = curses.color_pair(2)
+
+    for i, row in enumerate(maze):
+        for j, value in enumerate(row):
+            if (i, j) in path:
+                stdscr.addstr(i, j*2, "X", RED)
+            else:
+                stdscr.addstr(i, j*2, value, BLUE)
+
+
+def find_start(maze, start):
+    for i, row in enumerate(maze):
+        for j, value in enumerate(row):
+            if value == start:
+                return i, j
+
+    return None
+
+
+def find_path(maze, stdscr):
+    start = "O"
+    end = "X"
+    start_pos = find_start(maze, start)
+
+    q = queue.Queue()
+    q.put((start_pos, [start_pos]))
+
+    visited = set()
+
+    while not q.empty():
+        current_pos, path = q.get()
+        row, col = current_pos
+
+        stdscr.clear()
+        print_maze(maze, stdscr, path)
+        time.sleep(0.2)
+        stdscr.refresh()
+
+        if maze[row][col] == end:
+            return path
+
+        neighbors = find_neighbors(maze, row, col)
+        for neighbor in neighbors:
+            if neighbor in visited:
+                continue
+
+            r, c = neighbor
+            if maze[r][c] == "#":
+                continue
+
+            new_path = path + [neighbor]
+            q.put((neighbor, new_path))
+            visited.add(neighbor)
+
+
+def find_neighbors(maze, row, col):
+    neighbors = []
+
+    if row > 0:  # UP
+        neighbors.append((row - 1, col))
+    if row + 1 < len(maze):  # DOWN
+        neighbors.append((row + 1, col))
+    if col > 0:  # LEFT
+        neighbors.append((row, col - 1))
+    if col + 1 < len(maze[0]):  # RIGHT
+        neighbors.append((row, col + 1))
+
+    return neighbors
+
+
+def main(stdscr):
+    curses.init_pair(1, curses.COLOR_BLUE, curses.COLOR_BLACK)
+    curses.init_pair(2, curses.COLOR_RED, curses.COLOR_BLACK)
+
+    find_path(maze, stdscr)
+    stdscr.getch()
+
+
+wrapper(main)
+
+-------------------------------------------------------------------------------------------
+                                       NBA Stats & Current Scores (Medium)
+
+from requests import get
+from pprint import PrettyPrinter
+
+BASE_URL = "https://data.nba.net"
+ALL_JSON = "/prod/v1/today.json"
+
+printer = PrettyPrinter()
+
+
+def get_links():
+    data = get(BASE_URL + ALL_JSON).json()
+    links = data['links']
+    return links
+
+
+def get_scoreboard():
+    scoreboard = get_links()['currentScoreboard']
+    games = get(BASE_URL + scoreboard).json()['games']
+
+    for game in games:
+        home_team = game['hTeam']
+        away_team = game['vTeam']
+        clock = game['clock']
+        period = game['period']
+
+        print("------------------------------------------")
+        print(f"{home_team['triCode']} vs {away_team['triCode']}")
+        print(f"{home_team['score']} - {away_team['score']}")
+        print(f"{clock} - {period['current']}")
+
+
+def get_stats():
+    stats = get_links()['leagueTeamStatsLeaders']
+    teams = get(
+        BASE_URL + stats).json()['league']['standard']['regularSeason']['teams']
+
+    teams = list(filter(lambda x: x['name'] != "Team", teams))
+    teams.sort(key=lambda x: int(x['ppg']['rank']))
+
+    for i, team in enumerate(teams):
+        name = team['name']
+        nickname = team['nickname']
+        ppg = team['ppg']['avg']
+        print(f"{i + 1}. {name} - {nickname} - {ppg}")
+
+
+get_stats()
+
+-------------------------------------------------------------------------------------------
+                                        - Currency Converter (Medium)
+
+from requests import get
+from pprint import PrettyPrinter
+
+BASE_URL = "https://free.currconv.com/"
+API_KEY = "562ddaf40c95f5d58108"
+
+printer = PrettyPrinter()
+
+
+def get_currencies():
+    endpoint = f"api/v7/currencies?apiKey={API_KEY}"
+    url = BASE_URL + endpoint
+    data = get(url).json()['results']
+
+    data = list(data.items())
+    data.sort()
+
+    return data
+
+
+def print_currencies(currencies):
+    for name, currency in currencies:
+        name = currency['currencyName']
+        _id = currency['id']
+        symbol = currency.get("currencySymbol", "")
+        print(f"{_id} - {name} - {symbol}")
+
+
+def exchange_rate(currency1, currency2):
+    endpoint = f"api/v7/convert?q={currency1}_{currency2}&compact=ultra&apiKey={API_KEY}"
+    url = BASE_URL + endpoint
+    data = get(url).json()
+
+    if len(data) == 0:
+        print('Invalid currencies.')
+        return
+
+    rate = list(data.values())[0]
+    print(f"{currency1} -> {currency2} = {rate}")
+
+    return rate
+
+
+def convert(currency1, currency2, amount):
+    rate = exchange_rate(currency1, currency2)
+    if rate is None:
+        return
+
+    try:
+        amount = float(amount)
+    except:
+        print("Invalid amount.")
+        return
+
+    converted_amount = rate * amount
+    print(f"{amount} {currency1} is equal to {converted_amount} {currency2}")
+    return converted_amount
+
+
+def main():
+    currencies = get_currencies()
+
+    print("Welcome to the currency converter!")
+    print("List - lists the different currencies")
+    print("Convert - convert from one currency to another")
+    print("Rate - get the exchange rate of two currencies")
+    print()
+
+    while True:
+        command = input("Enter a command (q to quit): ").lower()
+
+        if command == "q":
+            break
+        elif command == "list":
+            print_currencies(currencies)
+        elif command == "convert":
+            currency1 = input("Enter a base currency: ").upper()
+            amount = input(f"Enter an amount in {currency1}: ")
+            currency2 = input("Enter a currency to convert to: ").upper()
+            convert(currency1, currency2, amount)
+        elif command == "rate":
+            currency1 = input("Enter a base currency: ").upper()
+            currency2 = input("Enter a currency to convert to: ").upper()
+            exchange_rate(currency1, currency2)
+        else:
+            print("Unrecognized command!")
+
+main()
+                                       (or)
+import requests
+
+API_KEY = 'fca_live_QiRD4yaE7K1aJQIAfVLojfu8J2KPxSXPYkDxxTzc'
+BASE_URL = f"https://api.freecurrencyapi.com/v1/latest?apikey={API_KEY}"
+
+CURRENCIES = ["USD", "CAD", "EUR", "AUD", "CNY"]
+
+def convert_currency(base):
+    currencies = ",".join(CURRENCIES)
+    url = f"{BASE_URL}&base_currency={base}&currencies={currencies}"
+    try:
+        response = requests.get(url)
+        data = response.json()
+        return data["data"]
+    except:
+        print("Invalid currency.")
+        return None
+
+while True:
+    base = input("Enter the base currency (q for quit): ").upper()
+
+    if base == "Q":
+        break
+
+    data = convert_currency(base)
+    if not data:
+        continue
+
+    del data[base]
+    for ticker, value in data.items():
+        print(f"{ticker}: {value}")
+-------------------------------------------------------------------------------------------
+                                          YouTube Video Downloader (Medium)
+
+from pytube import YouTube
+import tkinter as tk
+from tkinter import filedialog
+
+def download_video(url, save_path):
+    try:
+        yt = YouTube(url)
+        streams = yt.streams.filter(progressive=True, file_extension="mp4")
+        highest_res_stream = streams.get_highest_resolution()
+        highest_res_stream.download(output_path=save_path)
+        print("Video downloaded successfully!")
+    except Exception as e:
+        print(e)
+
+def open_file_dialog():
+    folder = filedialog.askdirectory()
+    if folder:
+        print(f"Selected folder: {folder}")
+
+    return folder
+
+if __name__ == "__main__":
+    root = tk.Tk()
+    root.withdraw()
+
+    video_url = input("Please enter a YouTube url: ")
+    save_dir = open_file_dialog()
+
+    if save_dir:
+        print("Started download...")
+        download_video(video_url, save_dir)
+    else:
+        print("Invalid save location.")
+
+
+-------------------------------------------------------------------------------------------
+                                       Automated File Backup (Medium)
+
+import os
+import shutil
+import datetime
+import schedule
+import time
+
+source_dir = "C:/Users/Tim/Pictures/Screenshots"
+destination_dir = "C:/Users/Tim/Desktop/Backups"
+
+def copy_folder_to_directory(source, dest):
+    today = datetime.date.today()
+    dest_dir = os.path.join(dest, str(today))
+    
+    try:
+        shutil.copytree(source, dest_dir)
+        print(f"Folder copied to: {dest_dir}")
+    except FileExistsError:
+        print(f"Folder already exists in: {dest}")
+
+
+schedule.every().day.at("18:57").do(lambda: copy_folder_to_directory(source_dir, destination_dir))
+
+while True:
+    schedule.run_pending()
+    time.sleep(60)
+
+
+-------------------------------------------------------------------------------------------
+                                             Aim Trainer (Advanced)
+import math
+import random
+import time
+import pygame
+pygame.init()
+
+WIDTH, HEIGHT = 800, 600
+
+WIN = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Aim Trainer")
+
+TARGET_INCREMENT = 400
+TARGET_EVENT = pygame.USEREVENT
+
+TARGET_PADDING = 30
+
+BG_COLOR = (0, 25, 40)
+LIVES = 3
+TOP_BAR_HEIGHT = 50
+
+LABEL_FONT = pygame.font.SysFont("comicsans", 24)
+
+
+class Target:
+    MAX_SIZE = 30
+    GROWTH_RATE = 0.2
+    COLOR = "red"
+    SECOND_COLOR = "white"
+
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+        self.size = 0
+        self.grow = True
+
+    def update(self):
+        if self.size + self.GROWTH_RATE >= self.MAX_SIZE:
+            self.grow = False
+
+        if self.grow:
+            self.size += self.GROWTH_RATE
+        else:
+            self.size -= self.GROWTH_RATE
+
+    def draw(self, win):
+        pygame.draw.circle(win, self.COLOR, (self.x, self.y), self.size)
+        pygame.draw.circle(win, self.SECOND_COLOR,
+                           (self.x, self.y), self.size * 0.8)
+        pygame.draw.circle(win, self.COLOR, (self.x, self.y), self.size * 0.6)
+        pygame.draw.circle(win, self.SECOND_COLOR,
+                           (self.x, self.y), self.size * 0.4)
+
+    def collide(self, x, y):
+        dis = math.sqrt((x - self.x)**2 + (y - self.y)**2)
+        return dis <= self.size
+
+
+def draw(win, targets):
+    win.fill(BG_COLOR)
+
+    for target in targets:
+        target.draw(win)
+
+
+def format_time(secs):
+    milli = math.floor(int(secs * 1000 % 1000) / 100)
+    seconds = int(round(secs % 60, 1))
+    minutes = int(secs // 60)
+
+    return f"{minutes:02d}:{seconds:02d}.{milli}"
+
+
+def draw_top_bar(win, elapsed_time, targets_pressed, misses):
+    pygame.draw.rect(win, "grey", (0, 0, WIDTH, TOP_BAR_HEIGHT))
+    time_label = LABEL_FONT.render(
+        f"Time: {format_time(elapsed_time)}", 1, "black")
+
+    speed = round(targets_pressed / elapsed_time, 1)
+    speed_label = LABEL_FONT.render(f"Speed: {speed} t/s", 1, "black")
+
+    hits_label = LABEL_FONT.render(f"Hits: {targets_pressed}", 1, "black")
+
+    lives_label = LABEL_FONT.render(f"Lives: {LIVES - misses}", 1, "black")
+
+    win.blit(time_label, (5, 5))
+    win.blit(speed_label, (200, 5))
+    win.blit(hits_label, (450, 5))
+    win.blit(lives_label, (650, 5))
+
+
+def end_screen(win, elapsed_time, targets_pressed, clicks):
+    win.fill(BG_COLOR)
+    time_label = LABEL_FONT.render(
+        f"Time: {format_time(elapsed_time)}", 1, "white")
+
+    speed = round(targets_pressed / elapsed_time, 1)
+    speed_label = LABEL_FONT.render(f"Speed: {speed} t/s", 1, "white")
+
+    hits_label = LABEL_FONT.render(f"Hits: {targets_pressed}", 1, "white")
+
+    accuracy = round(targets_pressed / clicks * 100, 1)
+    accuracy_label = LABEL_FONT.render(f"Accuracy: {accuracy}%", 1, "white")
+
+    win.blit(time_label, (get_middle(time_label), 100))
+    win.blit(speed_label, (get_middle(speed_label), 200))
+    win.blit(hits_label, (get_middle(hits_label), 300))
+    win.blit(accuracy_label, (get_middle(accuracy_label), 400))
+
+    pygame.display.update()
+
+    run = True
+    while run:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT or event.type == pygame.KEYDOWN:
+                quit()
+
+
+def get_middle(surface):
+    return WIDTH / 2 - surface.get_width()/2
+
+
+def main():
+    run = True
+    targets = []
+    clock = pygame.time.Clock()
+
+    targets_pressed = 0
+    clicks = 0
+    misses = 0
+    start_time = time.time()
+
+    pygame.time.set_timer(TARGET_EVENT, TARGET_INCREMENT)
+
+    while run:
+        clock.tick(60)
+        click = False
+        mouse_pos = pygame.mouse.get_pos()
+        elapsed_time = time.time() - start_time
+
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+                break
+
+            if event.type == TARGET_EVENT:
+                x = random.randint(TARGET_PADDING, WIDTH - TARGET_PADDING)
+                y = random.randint(
+                    TARGET_PADDING + TOP_BAR_HEIGHT, HEIGHT - TARGET_PADDING)
+                target = Target(x, y)
+                targets.append(target)
+
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                click = True
+                clicks += 1
+
+        for target in targets:
+            target.update()
+
+            if target.size <= 0:
+                targets.remove(target)
+                misses += 1
+
+            if click and target.collide(*mouse_pos):
+                targets.remove(target)
+                targets_pressed += 1
+
+        if misses >= LIVES:
+            end_screen(WIN, elapsed_time, targets_pressed, clicks)
+
+        draw(WIN, targets)
+        draw_top_bar(WIN, elapsed_time, targets_pressed, misses)
+        pygame.display.update()
+
+    pygame.quit()
+
+
+if __name__ == "__main__":
+    main()
+
+-------------------------------------------------------------------------------------------
+                                            Advanced Python Scripting (Advanced)
+import os
+import json
+import shutil
+from subprocess import PIPE, run
+import sys
+
+
+GAME_DIR_PATTERN = "game"
+GAME_CODE_EXTENSION = ".go"
+GAME_COMPILE_COMMAND = ["go", "build"]
+
+
+def find_all_game_paths(source):
+    game_paths = []
+
+    for root, dirs, files in os.walk(source):
+        for directory in dirs:
+            if GAME_DIR_PATTERN in directory.lower():
+                path = os.path.join(source, directory)
+                game_paths.append(path)
+
+        break
+
+    return game_paths
+
+
+def get_name_from_paths(paths, to_strip):
+    new_names = []
+    for path in paths:
+        _, dir_name = os.path.split(path)
+        new_dir_name = dir_name.replace(to_strip, "")
+        new_names.append(new_dir_name)
+
+    return new_names
+
+
+def create_dir(path):
+    if not os.path.exists(path):
+        os.mkdir(path)
+
+
+def copy_and_overwrite(source, dest):
+    if os.path.exists(dest):
+        shutil.rmtree(dest)
+    shutil.copytree(source, dest)
+
+
+def make_json_metadata_file(path, game_dirs):
+    data = {
+        "gameNames": game_dirs,
+        "numberOfGames": len(game_dirs)
+    }
+
+    with open(path, "w") as f:
+        json.dump(data, f)
+
+
+def compile_game_code(path):
+    code_file_name = None
+    for root, dirs, files in os.walk(path):
+        for file in files:
+            if file.endswith(GAME_CODE_EXTENSION):
+                code_file_name = file
+                break
+
+        break
+
+    if code_file_name is None:
+        return
+
+    command = GAME_COMPILE_COMMAND + [code_file_name]
+    run_command(command, path)
+
+
+def run_command(command, path):
+    cwd = os.getcwd()
+    os.chdir(path)
+
+    result = run(command, stdout=PIPE, stdin=PIPE, universal_newlines=True)
+    print("compile result", result)
+
+    os.chdir(cwd)
+
+def main(source, target):
+    cwd = os.getcwd()
+    source_path = os.path.join(cwd, source)
+    target_path = os.path.join(cwd, target)
+
+    game_paths = find_all_game_paths(source_path)
+    new_game_dirs = get_name_from_paths(game_paths, "_game")
+
+    create_dir(target_path)
+
+    for src, dest in zip(game_paths, new_game_dirs):
+        dest_path = os.path.join(target_path, dest)
+        copy_and_overwrite(src, dest_path)
+        compile_game_code(dest_path)
+
+    json_path = os.path.join(target_path, "metadata.json")
+    make_json_metadata_file(json_path, new_game_dirs)
+
+
+if __name__ == "__main__":
+    args = sys.argv
+    if len(args) != 3:
+        raise Exception("You must pass a source and target directory - only.")
+
+    source, target = args[1:]
+    main(source, target)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Data Science Projects for Healthcare Industry
+1) ML Projects
+a) Liver Cirrhosis
+b) Heart Disease
+c) Stroke
+2) Deep Learning and Computer Vision
+a) X-rays, MRI's, CT scans
+b) Diabetes Retinopathy
+c) Breast Cancer Prediction
+d) Brain Tumor Classification
+e) Genomics
+f) Abnormalities Detection (Ex: Chest X-Ray)
+3) AI
+a) Disease Monitoring
+b) Virtual Assistant for Patients
+c) Smartwatch
+4) Time Series
+a) Forecast Covid-19 cases
+b) Forecasting other viruses
+explain set by set procedure with clear way

@@ -1,0 +1,80 @@
+Types of statistics
+# Inferential statistics:-Many times, a collection of the entire data is impossible. Hence a subset of the data points is collected. From the subset we can get conclusions about the entire population. This is called as inferential statistics.
+# Descriptive statistics:-These are used to summarize data, such as the mean, standard deviation
+# Population:-This point speaks about totality means all values or complete list of
+observations.
+# Sample:-A sample is a subset of a population, usually a small portion of the
+population that is being analysed.
+# Variable:-In statistics what we are examining is a variable.A variable can store any type of data.A variable has a value
+-------------------------------------------------------------------------------------------
+Types of variables:-
+# Quantitative:-Measured in numbers.
+# Categorical variable or Qualitative:-Different group of categories
+-------------------------------------------------------------------------------------------
+Types of Categorical variable:-
+# Ordinal:-Logical order is possible to do analysis. We can logical order according to some dictionary format. After this we can do some analysis.
+# Nominal:-There is no logical ordering with respect to the actual values
+-------------------------------------------------------------------------------------------
+Types of Quantitative variables:-
+# Discrete variables:-Discrete variables are like whole numbers.
+# Continuous variables:-Continuous variables are like normal numbers includes floating point numbers.
+-------------------------------------------------------------------------------------------
+m
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------
+
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------
+
+
+-------------------------------------------------------------------------------------------

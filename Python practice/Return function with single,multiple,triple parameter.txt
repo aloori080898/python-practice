@@ -1,0 +1,51 @@
+Return function with single parameter
+-------------------------------------
+def m1():
+    a = 3
+    return a
+x=m1()
+print(x)
+    
+Return function with Multiple parameter
+----------------------------------------
+def m1():
+    a = 3
+    b = 5
+    return a,b
+x,y = m1()
+print(x,y)
+    
+Return function with Triple parameter
+-------------------------------------
+def m1():
+    a = 3
+    b = 5
+    c = 6
+    return a,b,c
+x,y,z = m1()
+print(x,y,z)
+
+Return function assigning single variable
+-----------------------------------------
+def m1():
+    a = 3
+    b = 5
+    c = 6
+    return a,b,c
+x = m1()
+print(x)
+    
+Return function call variable function with print function
+----------------------------------------------------------
+def m1():
+    a = 3
+    b = 5
+    c = 6
+    return a,b,c
+x,y,z = m1()
+print(x)
+print(y)
+print(z)s
+
+    
+    

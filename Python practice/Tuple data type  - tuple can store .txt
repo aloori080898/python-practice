@@ -1,0 +1,48 @@
+Tuple data type  :- tuple can store a group of values. we use for parenthesis symbol()
+----------------
+example:1                Tuple having immutable nature
+--------
+a = (10,20,30,40)         
+print(a)
+print(type(a))
+
+example:-2     without parenthesis
+----------
+a = 10,20,30,40
+print(a)
+print(type(a))
+example:3
+---------
+a = (10.25,10.35)
+print(a)
+print(type(a))
+
+Integer data type
+-----------------
+a = (10)
+print(a)
+print(type(a))
+
+String data type:-A group of characters enclosed within single quotes or double quotes or 
+----------------  triple quotes is called as string. 
+a = ("praveen")
+print(a)
+print(type(a))
+
+List data type:  list can store a group of values. we use for square brackets []
+--------------
+a = [10,20,30,40]
+print(a)
+print(type(a))
+
+Set data type:-We can create set data structure by using curly braces{}.
+-------------
+a = {10,20,30,40}           set can store a group of values.
+print(a)
+print(type(a))
+
+Dictionary data type:- Dictionary can store a group of values in the form of key value pair.We can create dictionary data structure by using curly braces {}. 
+--------------------
+details = {1: "Jeswanth", 2: "Kumari", 3: "Prasad", 4: "Daniel"} 
+print(details) 
+print(type(details)) 

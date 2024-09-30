@@ -1,0 +1,293 @@
+import phonenumbers
+from phonenumbers import timezone
+from phonenumbers import geocoder
+from phonenumbers import carrier
+ 
+number = input("Enter the phone number with country code : ")
+ 
+# Parsing String to the Phone number
+phoneNumber = phonenumbers.parse(number)
+ 
+# printing the timezone using the timezone module
+timeZone = timezone.time_zones_for_number(phoneNumber)
+print("timezone : "+str(timeZone))
+ 
+# printing the geolocation of the given number using the geocoder module
+geolocation = geocoder.description_for_number(phoneNumber,"en")
+print("location : "+geolocation)
+ 
+# printing the service provider name using the carrier module
+service = carrier.name_for_number(phoneNumber,"en")
+print("service provider : "+service)
+----------------------------------------------------------------------------------------------------------------------
+import hashlib                               login id and password creation code
+import os
+
+USER_DATA_FILE = 'users.txt'eady exists. Please choose a different username.")
+        return False
+
+def hash_password(password):
+    # Hash the password using praveen-123456
+    return hashlib.praveen-123456(password.encode()).hexdigest()
+
+def register_user(praveen,123):
+    # Check if the user already exists
+    if user_exists(charan):
+        print("Username alr
+    
+    # Hash the password
+    hashed_password = hash_password(123)
+    
+    # Store the username and hashed password
+    with open(USER_DATA_FILE, 'a') as file:
+        file.write(f"{username} {hashed_password}\n")
+    
+    print("User registered successfully!")
+    return True
+
+def user_exists(username):
+    if not os.path.exists(USER_DATA_FILE):
+        return False
+    
+    with open(USER_DATA_FILE, 'r') as file:
+        for line in file:
+            stored_username, _ = line.strip().split()
+            if stored_username == username:
+                return True
+    return False
+
+def authenticate_user(username, password):
+    if not os.path.exists(USER_DATA_FILE):
+        print("No users are registered yet.")
+        return False
+    
+    hashed_password = hash_password(password)
+    
+    with open(USER_DATA_FILE, 'r') as file:
+        for line in file:
+            stored_username, stored_password = line.strip().split()
+            if stored_username == username and stored_password == hashed_password:
+                print("Login successful!")
+                return True
+    
+    print("Invalid username or password.")
+    return False
+
+def main():
+    while True:
+        print("\n1. Register")
+        print("\n2. Login")
+        print("\n3. Exit")
+        choice = input("Enter your choice: ")
+        
+        if choice == '1':
+            username = input("Enter a username: ")
+            password = input("Enter a password: ")
+            register_user(username, password)
+        elif choice == '2':
+            username = input("Enter your username: ")
+            password = input("Enter your password: ")
+            authenticate_user(username, password)
+        elif choice == '3':
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == '__main__':
+    main()
+-------------------------------------------------------------------------------------------------------------------
+from urllib.parse import urlunparse, urlencode
+
+def create_url(scheme, netloc, path='', params='', query={}, fragment=''):
+    """
+    Create a URL from given components.
+
+    :param scheme: URL scheme ('https')
+    :param netloc: Network location (alooriraju.com')
+    :param path: Path within the domain (index.html')
+    :param params: Additional parameters (1623)
+    :param query: Dictionary of query parameters (e.g., {'raju': '10', 'praveen': '20'})
+    :param fragment: Fragment identifier ('section1')
+    :return: Constructed URL as a string
+    """
+    query_string = urlencode(query)
+    return urlunparse((scheme, netloc, path, params, query_string, fragment))
+
+# Example usage:
+url = create_url(
+    scheme='https',
+    netloc='alooriraju.com',
+    path='page.html',
+    query={'id': 10, 'user': 'raju'},
+    fragment='section2'
+)
+
+print(url)
+
+url = create_url(
+    scheme='https',
+    netloc='praveen.com',
+    path='page.html',
+    query={'id': 20, 'user': 'praveen'},
+    fragment='section1'
+)
+
+print(url)
+---------------------------------------------------------------------------------------------------------------------
+my_string = "python programming"
+x = 0
+for i in my_string:
+    x = x + 1
+    print(my_string[0:x])
+for i in my_string:
+    x = x- 1
+    print(my_string[0:x])
+---------------------------------------------------------------------------------------------------------------------
+from turtle import *
+import colorsys as cs
+bgcolor('black')
+hideturtle()
+goto(0,-50)
+speed(0)
+tracer(10)
+width(2)
+for i in range(24):
+    for j in range(14):
+        color(cs.hsv_to_rgb(j/15,i/25,1))
+        right(90)
+        circle(200-i*4,90)
+        left(90)
+        circle(200- i * 4,90)
+        right(180)
+        circle(50,24)
+done()
+---------------------------------------------------------------------------------------------------------------------
+import turtle
+
+t = turtle.Turtle()
+s = turtle.Screen()
+s.bgcolor("black")
+t.speed(10)
+t.pensize(2)
+t.pencolor("white")
+
+
+
+def s_curve():
+    for i in range(90):
+        t.left(1)
+        t.forward(1)
+
+def r_curve():
+    for i in range(90):
+        t.right(1)
+        t.forward(1)
+
+def l_curve():
+    s_curve()
+    t.forward(80)
+    s_curve()
+
+def l_curve1():
+    s_curve()
+    t.forward(90)
+    s_curve()
+
+def half():
+    t.forward(50)
+    s_curve()
+    t.forward(90)
+    l_curve()
+    t.forward(40)
+    t.left(90)
+    t.forward(80)
+    t.right(90)
+    t.forward(10)
+    t.right(90)
+    t.forward(120) #on test
+    l_curve1()
+    t.forward(30)
+    t.left(90)
+    t.forward(50)
+    r_curve()
+    t.forward(40)
+    t.end_fill()
+
+def get_pos():
+    t.penup()
+    t.forward(20)
+    t.right(90)
+    t.forward(10)
+    t.right(90)
+    t.pendown()
+
+def eye():
+    t.penup()
+    t.right(90)
+    t.forward(160)
+    t.left(90)
+    t.forward(70)
+    t.pencolor("black")
+    t.dot(35)
+
+def sec_dot():
+    t.left(90)
+    t.penup()
+    t.forward(310)
+    t.left(90)
+    t.forward(120)
+    t.pendown()
+
+    t.dot(35)
+
+
+
+
+t.fillcolor("#306998")
+t.begin_fill()
+half()
+t.end_fill()
+get_pos()
+t.fillcolor("#FFD43B")
+t.begin_fill()
+half()
+t.end_fill()
+
+eye()
+sec_dot()
+
+
+
+def pause():
+    t.speed(2)
+    for i in range(100):
+        t.left(90)
+pause()
+
+------------------------------------------------------------------------------------------def get_response(user_input):                         simple chatbot
+    user_input = user_input.lower()
+    for key in responses:
+        if key in user_input:
+            return responses[key]
+    return responses["default"]
+
+def chatbot():
+    print("Hi! I'm a chatbot. Type 'bye' to exit.")
+    while True:
+        user_input = input("You: ")
+        if user_input.lower() == "bye":
+            print("Chatbot: Goodbye! Have a great day!")
+            break
+        response = get_response(user_input)
+        print("Chatbot:", response)
+
+if __name__ == "__main__":
+    chatbot()
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+---------------------------------------------------------------------------------------------------------------------

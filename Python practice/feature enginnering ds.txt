@@ -1,0 +1,263 @@
+feature engineering:-creating new feature from existing feature
+# we can identify method by using two thing
+1) calling dir  ------------------- print(dir(sp))
+2) by using documentation
+
+# df[company_n] =  adding the columns 
+ n =  numerical data
+df["company"]  =  replacing the existing columns
+-------------------------------------------------------------------------------------------
+label encoder:- by using we convert all character/ categorical data to variable to a numeric.
+ # 
+from sklearn.preprocessing import LabelEncoder
+import pandas as pd
+d = {
+"Company": ["Google", "Twitter", "Google", "LinkedIn"],
+"Role": ["Data Scientist", "Sales manager", "HR", "HR"]
+}
+df = pd.DataFrame(d)
+label_encoder = LabelEncoder()
+df["Company_n"] = label_encoder.fit_transform(df['Company'])
+df["Role_n"] = label_encoder.fit_transform(df['Role'])
+print()
+print(df)
+-------------------------------------------------------------------------------------------
+according min max scaling:-
+ maximum values:-1------true_flag = 1                   
+minimum value :- 0 -----   false_flag = 0---------------it is mainly used in the project
+-------------------------------------------------------------------------------------------
+import pandas as pd                     by using single column
+from sklearn.preprocessing import MinMaxScaler             (0,1)
+d = { 
+"x" : [10, 20, 30, 40, 50],
+"y" : [25, 50, 75, 100, 125]
+}
+df = pd.DataFrame(d)
+mm_scale = MinMaxScaler(feature_range = (0, 1))       in this (0,1) is called as tuple
+print(df)
+one_col = mm_scale.fit_transform(df[["x"]])
+print(one_col)
+-------------------------------------------------------------------------------------------
+ if we not provide syntax Value Error: Expected a 1D array, got an array with shape (5, 2)
+
+import pandas as pd           by using two columns
+from sklearn.preprocessing import MinMaxScaler
+d = {
+"x" : [10, 20, 30, 40, 50],
+"y" : [25, 50, 75, 100, 125]
+}
+df = pd.DataFrame(d)
+mm_scale = MinMaxScaler(feature_range = (0,1))
+print(df)
+df[["x","y"]] = mm_scale.fit_transform(df[["x","y"]])
+print(df)
+-------------------------------------------------------------------------------------------
+transforming features:- we can transform feature
+import numpy as np
+from sklearn.preprocessing import FunctionTransformer
+a = [[10, 20], [30, 40], [50, 60]]
+f = np.array(a)
+def add_ten(x):
+return x + 10
+obj = FunctionTransformer(add_ten)           -------decorator
+result = obj.transform(f)
+print(f)
+print()
+print(result)
+-------------------------------------------------------------------------------------------
+handling outlier:-
+dataframe is creating:-
+import numpy as np
+import pandas as pd
+houses = pd.DataFrame()
+houses['Price'] = [534433, 392333, 293222, 4322032]
+houses['rooms'] = [2, 3, 2, 116]
+houses['Square_Feet'] = [1500, 2500, 1500, 48000]
+print(houses)
+-------------------------------------------------------------------------------------------
+	quotes:-
+"There has never been a more exciting time to begin or jumpstart a new career. While many people fear what this Digital Age signifies in our day-to-day jobs, I get energized by the prospects, because we get to shape the world around us instead of simply reacting to it."
+
+Jennifer Hill
+-------------------------------------------------------------------------------------------
+import numpy as np
+import pandas as pd                      by using these we filter the the values
+houses = pd.DataFrame()
+houses['Price'] = [534433, 392333, 293222, 4322032]
+houses['rooms'] = [2, 3, 2, 116]
+houses['Square_Feet'] = [1500, 2500, 1500, 48000]
+con1 = houses['rooms']<5
+new = houses[con1]
+print(houses)
+-------------------------------------------------------------------------------------------
+import numpy as np          by using the outlier we filter the values
+import pandas as pd
+houses = pd.DataFrame()
+houses['Price'] = [534433, 392333, 293222, 4322032]
+houses['rooms'] = [2, 3, 2, 116]
+houses['Square_Feet'] = [1500, 2500, 1500, 48000]
+houses["Outlier"] = np.where(houses["rooms"] < 5, 0, 1)
+print(houses)
+-------------------------------------------------------------------------------------------
+impute missing values:
+ it is having impute with different strategy
+# mean
+# median
+# most_frequent  (mode)
+# constant
+-------------------------------------------------------------------------------------------
+import numpy as np       data frame is created
+import pandas as pd
+students = [
+            [85, 'M', 'verygood'],
+            [95, 'F', 'excellent'],
+            [60, None, 'good'],                      instead NAN we use nan
+            [np.nan, 'M', 'average'],
+            [70, 'M', 'good'],
+            [np.nan, None, 'verygood'],
+            [60, 'F', 'verygood'],
+            [98, 'M', 'excellent']
+]
+cols = ['marks', 'gender', 'result']
+df = pd.DataFrame(students, columns = cols)
+print(df)
+# `np.NaN` was removed in the NumPy 2.0 release. Use `np.nan` instead.. Did you mean: 'nan'?
+-------------------------------------------------------------------------------------------
+Imputing missing numeric values with median strategy
+import numpy as np
+from sklearn.impute import SimpleImputer
+import pandas as pd
+students = [
+            [85, 'M', 'verygood'],
+            [95, 'F', 'excellent'],
+            [60, None, 'good'],
+            [np.nan, 'M', 'average'],
+            [70, 'M', 'good'],
+            [np.nan, None, 'verygood'],
+            [60, 'F', 'verygood'],
+            [98, 'M', 'excellent']
+]
+cols = ['marks', 'gender', 'result']
+df = pd.DataFrame(students, columns = cols)
+print(df)
+imputer = SimpleImputer(missing_values = np.nan, strategy ='mean')
+result = df['marks'].values.reshape(-1, 1)  
+df.marks = imputer.fit_transform(result)
+print()
+print(df)
+
+# impute object need single column array
+-------------------------------------------------------------------------------------------
+by using most_frequent:-
+import numpy as np
+from sklearn.impute import SimpleImputer
+import pandas as pd
+students = [
+            [85, 'M', 'verygood'],
+            [95, 'F', 'excellent'],
+            [60, None, 'good'],
+            [np.nan, 'M', 'average'],
+            [70, 'M', 'good'],
+            [np.nan, None, 'verygood'],
+            [60, 'F', 'verygood'],
+            [98, 'M', 'excellent']
+]
+cols = ['marks', 'gender', 'result']
+df = pd.DataFrame(students, columns = cols)
+print(df)
+imputer = SimpleImputer(missing_values = np.nan, strategy ='most_frequent')
+result = df['marks'].values.reshape(-1, 1)
+df.marks = imputer.fit_transform(result)
+print()
+print(df)
+-------------------------------------------------------------------------------------------
+by using constant:-
+import numpy as np
+from sklearn.impute import SimpleImputer
+import pandas as pd
+students = [
+            [85, 'M', 'verygood'],
+            [95, 'F', 'excellent'],
+            [60, None, 'good'],
+            [np.nan, 'M', 'average'],
+            [70, 'M', 'good'],
+            [np.nan, None, 'verygood'],
+            [60, 'F', 'verygood'],
+            [98, 'M', 'excellent']
+]
+cols = ['marks', 'gender', 'result']
+df = pd.DataFrame(students, columns = cols)
+print(df)
+imputer = SimpleImputer(missing_values = np.nan, strategy ='constant')
+result = df['marks'].values.reshape(-1, 1)
+df.marks = imputer.fit_transform(result)
+print()
+print(df)
+-------------------------------------------------------------------------------------------
+Categorical data :-Categorical data are variables that contain label values rather than
+numeric values.
+-------------------------------------------------------------------------------------------
+Ordinal encoding or label encoder:- In ordinal encoding every nominal value is assigned an integer value.
+from numpy import asarray
+from sklearn.preprocessing import OrdinalEncoder
+data = asarray([['blue'], ['green'], ['red']])        it assign with the integer values
+encoder = OrdinalEncoder()                             example:- 0,1,2
+result = encoder.fit_transform(data)
+print(data)
+print(result)
+-------------------------------------------------------------------------------------------
+one hot encoding:-helps, it is technique where each of the nominal variables will be represented with binary values.
+
+from numpy import asarray
+from sklearn.preprocessing import OneHotEncoder
+a = [['apple'], ['peer'], ['apple'], ['peer'], ['apple']]
+data = asarray(a)
+encoder = OneHotEncoder(sparse_output = False)
+onehot = encoder.fit_transform(data)
+print(data)
+print()
+print(onehot)
+-------------------------------------------------------------------------------------------
+from numpy import asarray                               onehotencoding              
+from sklearn.preprocessing import OneHotEncoder
+a = [['blue'], ['green'], ['red']]
+data = asarray(a)
+encoder = OneHotEncoder(sparse_output = False)
+onehot = encoder.fit_transform(data)
+print(data)
+print()
+print(onehot)
+
+-------------------------------------------------------------------------------------------
+dummy variable:-If we drop first column from the result of one hot encoding then we will
+get dummy variable encoding.
+from numpy import asarray
+from sklearn.preprocessing import OneHotEncoder
+data = asarray([['blue'], ['green'], ['red']])
+encoder = OneHotEncoder(drop = 'first',sparse_output = False)
+onehot = encoder.fit_transform(data)
+print(data)
+print(onehot)
+-------------------------------------------------------------------------------------------
+import pandas as pd               it return object with single column 
+import numpy as np
+from sklearn.impute import SimpleImputer
+students = [
+[85, 'M', 'verygood'],
+[95, 'F', 'excellent'],
+[75, np.NaN, 'good'],
+[np.NaN, 'M', 'average'],
+[70, 'M', 'good'],
+[np.NaN, np.NaN, 'verygood'],
+[92, 'F', 'verygood'],
+[98, 'M', 'excellent']
+]
+cols = ['marks', 'gender', 'result']
+df = pd.DataFrame(students, columns = cols)
+print(df)
+imputer = SimpleImputer(missing_values = np.NaN,
+strategy='most_frequent')
+result = df['gender'].values.reshape(-1, 1)
+df.gender = imputer.fit_transform(result)
+print()
+print(df)

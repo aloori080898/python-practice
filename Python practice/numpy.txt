@@ -1,0 +1,277 @@
+The full form of numpy is 'Numerical Python'.
+# Numpy was created by Travis Oliphant
+# Array is an object which stores a group of values.
+# Also called as, ordered collection of values.
+# The array object in numpy is called as ndarray.
+-------------------------------------------------------------------------------------------
+import numpy
+print('numpy imported successfully')
+-------------------------------------------------------------------------------------------
+alias name to numpy
+import numpy as np
+print('numpy imported successfully')
+print('Alias name given to numpy as np')
+-------------------------------------------------------------------------------------------
+numpy.ndim
+# Ndim is predefined variable in numpy
+# By using this we can check the array dimensions.
+creating numpy with single value
+import numpy as np
+age = 44
+value = np.array(age)
+print(value)
+print(type(value))
+print(value.ndim)
+-------------------------------------------------------------------------------------------
+creating numpy array with group of Values
+import numpy as np
+details = [10, 20, 30, 40, 50]
+sales = np.array(details)
+print(sales)
+print(type(sales))
+print(sales.ndim)
+-------------------------------------------------------------------------------------------
+import numpy as np
+details = [[10, 20],[30,40]]
+sales = np.array(details)
+print(sales)
+print(type(sales))
+print(sales.ndim)
+-------------------------------------------------------------------------------------------
+Indexing and Slicing
+# We can access numpy array values by using indexing and slicing
+# Numpy array having indexing nature.
+# Numpy array index start with 0.
+# First element stores in 0th index
+# Second element stores in 1st index etc
+# By using slicing we can access piece of array from the main array.
+import numpy as np
+details = [10, 20, 30, 40, 50]
+sales = np.array(details)
+print(sales)
+print(sales[0])
+print(sales[1])
+print(sales[2])
+-------------------------------------------------------------------------------------------
+accessing numpy array by using indexing
+import numpy as np
+details = [10, 20, 30, 40, 50]
+sales = np.array(details)
+print(sales)
+print(sales[0])
+print(sales[1])
+print(sales[2])
+print(sales[3])
+print(sales[4])
+-------------------------------------------------------------------------------------------
+accesing numpy array by using indexing
+import numpy as np
+details = [10, 20, 30, 40, 50]
+sales = np.array(details)
+print(sales)
+print(sales[2:])
+-------------------------------------------------------------------------------------------
+creating matrix and selecting elements
+import numpy as np
+matrix = np.array([[10, 20, 30], [40, 50, 60], [70, 80, 90]])
+print(matrix)
+print(matrix[0,0])
+print(matrix[0,1])
+print(matrix[0,2])
+print(matrix[1,0])
+print(matrix[1,1])
+print(matrix[1,2])
+print(matrix[2,0])
+print(matrix[2,1])
+print(matrix[2,2])
+-------------------------------------------------------------------------------------------
+IndexError
+# If we try to access value with out of bounds of index then we will get Index Error.
+import numpy as np
+details = [10, 20, 30, 40, 50]
+sales = np.array(details)
+print(sales)
+print(sales[22])
+------------------------------------------------------------------------------------------
+Creating a array with all zeros
+# We can create array with all zeros by using numpy.zeros() function
+import numpy as np
+sales = np.zeros(5)
+print(sales)
+print(type(sales))
+-------------------------------------------------------------------------------------------
+import numpy as np
+sales = np.ones(5)
+print(sales)
+print(type(sales))
+-------------------------------------------------------------------------------------------
+shape attribute:-By using this we can check number of rows and columns in an array.
+# Shape attribute returns the tuple as number of rows and columns.
+import numpy as np
+details = np.array([[10, 20, 30], [40, 50, 60]])
+sales = np.array(details)
+print(sales)
+print(sales.shape)
+-------------------------------------------------------------------------------------------
+ndim attribute:-We should access this ndim attribute by using numpy array object
+# By using this we can check the dimensions of an array
+import numpy as np
+details = [10, 20, 30, 40, 50]
+sales = np.array(details)
+print(sales)
+print(sales.ndim)
+-------------------------------------------------------------------------------------------
+import numpy as np
+details = [[10, 20], [30, 40]]
+sales = np.array(details)
+print(sales)
+print(sales.ndim)
+-------------------------------------------------------------------------------------------
+import numpy as np
+details = [[10, 20], [30, 40], [50, 60]]
+sales = np.array(details)
+print(sales)
+print(type(sales))
+print(sales.ndim)
+-------------------------------------------------------------------------------------------
+arrayobject.T:-we should access this T attribute by using numpy array object
+# By using this we can transpose the array means it convers rows ascolumns and columns as rows.
+import numpy as np
+details = [[10, 20, 30], [40, 50, 60]]
+sales = np.array(details)
+print(sales)
+print()
+print(sales.T)
+-------------------------------------------------------------------------------------------
+import numpy as np
+details = [[10, 20], [30, 40]]
+sales = np.array(details)
+print(sales)
+print()
+print(sales.T)
+-------------------------------------------------------------------------------------------
+min() method:-We should access this min() method by using numpy array object
+# By using this we can check minimum value from the array.
+import numpy as np
+details = [[10, 20, 30], [40, 50, 60]]
+sales = np.array(details)
+print(sales)
+print(sales.min())
+-------------------------------------------------------------------------------------------
+max() method:-We should access this max() method by using numpy array object
+# By using this we can check maximum value from the array.
+import numpy as np
+details = [[10, 20, 30], [40, 50, 60]]
+sales = np.array(details)
+print(sales)
+print(sales.max())
+-------------------------------------------------------------------------------------------
+sum() method:-By using this we can get sum of all values from array.
+import numpy as np
+details = [[10, 20, 30], [40, 50, 60]]
+sales = np.array(details)
+print(sales)
+print()
+print(sales.sum())
+-------------------------------------------------------------------------------------------
+reshape() method:-By using this we can change the shape of an array.
+import numpy as np
+details = [[10, 20, 30], [40, 50, 60]]
+sales = np.array(details)
+print(sales)
+print()
+print(sales.reshape(3, 2))
+-------------------------------------------------------------------------------------------
+import numpy as np
+details = [[10, 20, 30], [40, 50, 60]]
+sales = np.array(details)
+print(sales)
+print()
+print(sales.reshape(6, 1))
+-------------------------------------------------------------------------------------------
+count_nonzero(p) function:-We should access this function by using numpy.
+# By using this we can get non zero values from numpy
+import numpy as np
+details = [[10, 0, 30], [40, 50, 60]]
+sales = np.array(details)
+print(sales)
+print()
+print(np.count_nonzero(sales))
+-------------------------------------------------------------------------------------------
+sort() method:-We should access this method by using numpy array object
+# By using this we can sort values in array.
+details = [[55, 13, 12], [99, 2, 1]]
+sales = np.array(details)
+print(sales)
+sales.sort()
+print()
+print(sales)
+-------------------------------------------------------------------------------------------
+flatten() method:-This method keeps all values in one dimension array.
+import numpy as np
+details = [[10, 20, 30], [40, 50, 60]]
+sales = np.array(details)
+print(sales)
+print()
+print(sales.flatten())
+-------------------------------------------------------------------------------------------
+adding value to array of values:-Based on requirement we can add value to array of values.
+import numpy as np
+details = [[10, 20, 30], [40, 50, 60]]
+sales = np.array(details)
+print(sales)
+print()
+print(sales + 2)
+-------------------------------------------------------------------------------------------
+Diagonal of a Matrix:- it store diagonal values from the set.
+import numpy as np
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(matrix)
+print()
+print(matrix.diagonal())
+-------------------------------------------------------------------------------------------
+Trace of a Matrix:-The trace of a matrix is the sum of the diagonal elements.
+import numpy as np
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(matrix)
+print()
+print(matrix.trace())
+-------------------------------------------------------------------------------------------
+import numpy as np
+matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+print(matrix)
+print()
+print(sum(matrix.diagonal()))
+-------------------------------------------------------------------------------------------
+Adding and Subtracting Matrices:-We can add & subtract two matrices.
+# We need to call add and subtract functions
+Adding two matrices
+import numpy as np
+matrix_a = np.array([[1, 1, 1], [1, 1, 1], [1, 1, 2]])
+matrix_b = np.array([[1, 3, 1], [1, 3, 1], [1, 3, 8]])
+print(matrix_a)
+print()
+print(matrix_b)
+print()
+print(np.add(matrix_a, matrix_b))
+                                     (or)
+import numpy as np
+matrix_a = np.array([[1, 1, 1], [1, 1, 1], [1, 1, 2]])
+matrix_b = np.array([[1, 3, 1], [1, 3, 1], [1, 3, 8]])
+print(matrix_a + matrix_b)
+-------------------------------------------------------------------------------------------
+Subtracting two matrices
+import numpy as np
+matrix_a = np.array([[1, 1, 1], [1, 1, 1], [1, 1, 2]])
+matrix_b = np.array([[1, 3, 1], [1, 3, 1], [1, 3, 8]])
+print(matrix_a)
+print()
+print(matrix_b)
+print()
+print(np.subtract(matrix_a, matrix_b))
+                                               (or)
+import numpy as np
+matrix_a = np.array([[1, 1, 1], [1, 1, 1], [1, 1, 2]])
+matrix_b = np.array([[1, 3, 1], [1, 3, 1], [1, 3, 8]])
+print(matrix_a - matrix_b)
+-------------------------------------------------------------------------------------------

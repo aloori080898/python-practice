@@ -1,0 +1,438 @@
+data visualization:-it is process to convert raw informtion into graphical representation
+# if we visualize data it is very easy to understand
+#A picture gives more meaningful information than thousand words
+---------------------------------------------------------------------------------------
+line chart:-A line chart or line graph is a type of chart which displays information as
+a series of data points connected by straight line
+# A line chart is often used to visualize a trend in data over intervals of
+time.
+basic code about line graph:-
+import matplotlib.pyplot as plt
+x =[2,4]
+y = [2,4]
+plt.plot(x,y)
+plt.show()
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+x =[5,6]
+y = [5,6]
+plt.plot(x,y,marker ='*')     at the end it denoted with star mark
+plt.show()
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+x =[5,6]
+y = [5,6]
+plt.plot(x,y)
+plt.show()
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+x =[5,6,9]
+y = [5,6,20]
+plt.plot(x,y,marker = '*')
+plt.show()
+---------------------------------------------------------------------------------------
+create a simple line chart and title
+import matplotlib.pyplot as plt
+x =[5,6,9]
+y = [5,6,20]
+plt.title("Boss it is graph")          add the title to line chart
+plt.plot(x,y,marker = '*')
+plt.show()
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+x =[5,6,9]
+y = [5,6,20]
+plt.title("Boss it is graph")
+plt.xlabel("x values")
+plt.ylabel("y values")
+plt.plot(x,y,marker = '*')    replacing the x-axis as x values
+plt.show()                    replacing the y-axis as y values
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+x =[5,6,9]
+y = [5,6,20]
+p = [10,20,25]
+plt.title("Boss it is graph")    adding extra point or adding extra values to line chart
+plt.xlabel("x values")
+plt.ylabel("y values")
+plt.plot(x,y,marker = '*')
+plt.plot(x,p,marker = '*')
+plt.show()
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+x =[2,3,5]
+y = [2,5,2]
+z = [2,3,4]
+plt.plot(x,y,z)
+plt.show()
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt   with decimal
+x =[2,3,4,1.2,3.4,5.7]
+y = [2,3,4,2.4,4.5,5.6]
+z = [2,3,0.4,5.4,3.6]
+plt.plot(x,y,z)
+plt.show()
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+x =[2,3]
+y = [2,3]
+plt.plot(x,y)
+plt.show()
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+x =[2,3,8,30,60]
+y = [2,3,25,50,55]
+plt.plot(x,y)
+plt.show()
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt            it represent ending with stat symbol
+x =[2,3,8,30,60]
+y = [2,3,25,50,55]
+plt.plot(x,y,marker ='*')
+plt.show()
+---------------------------------------------------------------------------------------
+To identify trends, such as whether sales increasing or decreasing.
+ To identify patterns, such as during weekend more sales.
+ To identify relationships, such as if we study more hours then we will get
+good marks.
+ To identify frequency, such as how often a product is purchased in a
+specific area & etc
+---------------------------------------------------------------------------------------
+Bar chart:-The bar graph is the graphical representation of categorical data.
+import matplotlib.pyplot as plt
+months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug",
+"Sep", "Oct", "Nov", "Dec"]
+sales = [23, 45, 56, 78, 213, 45, 78, 89, 99, 100, 101, 130]
+plt.title('A Bar Graph')
+plt.xlabel('Month')
+plt.ylabel('Product Sales')
+plt.bar(months, sales)
+plt.show()
+-------------------------------------------------------------------------------------------
+loading the csv 
+import matplotlib.pyplot as plt
+import pandas as pd
+df = pd.read_csv("sales11.csv")
+plt.title('A Bar Graph')
+plt.xlabel('Month')
+plt.ylabel('Products sales')
+plt.bar(df.month,df.sales)
+plt.show()
+-----------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+months = ["Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug",
+"Sep", "Oct", "Nov", "Dec"]
+sales = [23, 45, 56, 78, 213, 45, 78, 89, 99, 100, 101, 130]
+plt.title('A Bar Graph')
+plt.xlabel('Month')
+plt.ylabel('Product Sales')
+plt.bar(months, sales,width = 1.4)
+plt.show()
+-------------------------------------------------------------------------------------------
+ Histogram:-A histogram is the graphical representation of quantitative data.
+# This displays the frequency/count of numerical data in bars.
+import matplotlib.pyplot as plt
+data = [12, 15, 13, 20, 19, 20, 11, 19, 11, 12, 19, 13, 15, 16, 18, 13]
+plt.title('Histogram plot')
+plt.xlabel('x values')
+plt.ylabel('y values')
+plt.hist(data,bins=20)
+plt.show()
+-----------------------------------------------------------------------------------
+pie chart:- This is a circular plot that has been divided into slices displaying
+numerical proportions.
+# A large category means that it will occupy a larger portion of the pie
+chart.
+import matplotlib.pyplot as plt
+students = ['Daniel', 'Prasad', 'Srinu']
+points = [62, 48, 36]
+plt.pie(points, labels = students)
+plt.axis('equal')
+plt.show()
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+students = ['Daniel', 'Prasad', 'Srinu']
+points = [62, 48, 36]
+c = ['y','r','b']
+plt.pie(points, labels = students, colors = c , shadow = True,explode = (0.05, 0.05, 0.05), autopct = '%1.1f%%')
+plt.axis('equal')
+plt.legend()
+plt.show()
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+students = ['Daniel', 'Prasad', 'Srinu']
+points = [62, 48, 36]
+c = ['y','r','b']
+plt.pie(points, labels = students, colors = c , shadow = True,explode = (0.5, 0.5, 0.5), autopct = '%1.1f%%')
+plt.axis('equal')
+plt.legend()
+plt.show()
+
+---------------------------------------------------------------------------------------
+Attribute:-The first parameter to the function is the list of numbers for every
+category.
+o labels attribute:
+ A list of categories separated by commas is then passed as
+the argument to labels attribute.
+
+o colors attribute:
+ To provide the color for every category.
+o To create shadows around the various categories in pie chart.
+o To split each slice of the pie chart into its
+---------------------------------------------------------------------------------------
+scatter plot:-In scatter plot each value in the data set is represented by a dot.
+ By using this plot we can understand the relationship between two
+variables.
+import matplotlib.pyplot as plt
+area = [1, 2, 3, 4, 5]
+rice_packs = [10, 20, 30, 40, 50]
+plt.xlabel('area')
+plt.ylabel('rice packs')
+plt.scatter(area, rice_packs)
+plt.show()
+---------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+area = [1, 2, 3, 4, 5]
+rice_packs = [6, 13, 31, 41, 51]
+plt.xlabel('area')
+plt.ylabel('rice packs')
+plt.scatter(area, rice_packs)
+plt.show()
+---------------------------------------------------------------------------------------
+Box Plots:- Box plots help us measure how well data in a dataset is distributed.
+# The graph shows the maximum, minimum, median, first quartile and
+third quartiles of the dataset.
+# Use a boxplot when you need to get the overall statistical information
+about the data distribution.
+# It is a good tool for detecting outliers in a dataset.
+
+import matplotlib.pyplot as plt
+data = [10,20,30,40,50]
+plt.boxplot(data)
+plt.show()
+---------------------------------------------------------------------------------------
+ the line dividing the box into two shows the median of the data.
+ The end of the box represents the upper quartile (75%) while the start of
+the box represents the lower quartile (25%).
+ The part between the upper quartile and the lower quartile is known as
+the Inter Quartile Range (IQR) and helps in approximating 50% of the
+middle data.
+import matplotlib.pyplot as plt
+data = [10,20,30,40,50,99]
+plt.boxplot(data)
+plt.show()
+----------------------------------------------------------------------------------------
+Heatmap
+ A heatmap :- it is a method of data visualization that plots data by replacing
+numbers with colours.
+ If it is representing with color then it is very easy to understand patterns
+between different values in the dataset.
+ It is used to visualize data in a two-dimensional format as a coloured
+map so that different colour variations represent different patterns
+between features
+import matplotlib.pyplot as plt
+import pandas as pd
+d = {
+"Apple": [10, 20, 30, 40],
+"Orange": [7, 14, 21, 28],
+"Banana": [55, 15, 8, 12],
+"Pear": [15, 14, 1, 8]
+}
+i = ['Basket1', 'Basket2', 'Basket3', 'Basket4']
+df = pd.DataFrame(d, index = i)
+plt.imshow(df, cmap = "YlGnBu")
+plt.colorbar()
+plt.xticks(range(len(df)), df.columns)
+plt.yticks(range(len(df)), df.index)
+plt.show()
+.-----------------------------------------------------------------------------------------
+seaborn:-Seaborn is advanced data visualization library.
+ By using this we can visualize the data.
+loading the titanic dataset
+
+import seaborn as sns
+df = sns.load_dataset('titanic')
+print(df.head())
+.-----------------------------------------------------------------------------------------
+Titanic data set understanding
+ Let’s understand the titanic dataset.
+ Data Set Column Descriptions
+o pclass: Passenger Class (1 = 1st; 2 = 2nd; 3 = 3rd)
+o survived: Survival (0 = No; 1 = Yes)
+o name: Name
+o sex: type of gender
+o age: Age
+o sibsp: Number of siblings/spouses aboard
+o parch: Number of parents/children aboard
+o fare: Passenger fare (British pound)
+o embarked: Port of embarkation (C = Cherbourg; Q = Queenstown;
+S = Southampton)
+o adult_male: A male 18 or older (0 = No, 1=Yes)
+o deck: Deck of the ship
+o who: man (18+), woman (18+), child (<18)
+o alive: Yes, no
+o embarked_town: Port of embarkation (Cherbourg, Queenstown,
+Southampton)
+o class: Passenger class (1st; 2nd; 3rd)
+o alone: 1 = alone, 0 = not alone ( you have at least 1 sibling, spouse,
+parent or child on board)
+.-----------------------------------------------------------------------------------------
+import seaborn as sns
+df = sns.load_dataset('titanic')
+print(df.shape)                          by using shape attribute
+.-----------------------------------------------------------------------------------------
+import seaborn as sns
+df = sns.load_dataset('titanic')             by using columns
+print(df.columns)                                
+.-----------------------------------------------------------------------------------------
+import seaborn as sns
+df = sns.load_dataset('titanic')
+df.info()          print(df.info())                                  by using info()
+.-----------------------------------------------------------------------------------------
+import seaborn as sns
+import pandas as pd
+df = sns.load_dataset('titanic')
+result = df['sex'].unique()
+print(result)
+.-----------------------------------------------------------------------------------------.
+Data Analysis:-From the data max price/fare a passenger paid for a ticket in this data
+set was 512.3292 British pounds, and the minimum price/fare was 0
+British pounds.
+ There is missing data for age column.
+import seaborn as sns
+df = sns.load_dataset('titanic')
+print(df.describe())
+-----------------------------------------------------------------------------------------
+Bar Plot :-A bar plot shows the mean value of every value in a categorical column.
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+df = sns.load_dataset('titanic')
+sns.barplot(x = 'sex', y = 'age', data = df)
+plt.show()
+.-----------------------------------------------------------------------------------------
+Get a count of the number of survivors
+ 0 represents not survived
+ 1 means survived.
+
+import seaborn as sns
+df = sns.load_dataset('titanic')
+print(df['survived'].value_counts())
+.-----------------------------------------------------------------------------------------
+count plot:-This type of plot is similar to the bar plot, it displays the count of
+categories in a specific column.
+ By using we can calculate the total number or count of survived and not
+survived.
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+df = sns.load_dataset('titanic')
+sns.countplot(x = "survived", data = df)
+plt.show()
+.-----------------------------------------------------------------------------------------
+Plot the survival rate of each class:-
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+df = sns.load_dataset('titanic')
+sns.barplot(x ='class',y = "survived",data = df)
+plt.show()
+.-----------------------------------------------------------------------------------------
+Let’s understand the survival rate by gender and class.
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+df = sns.load_dataset('titanic')
+result = df.pivot_table('survived', index = 'sex', columns = 'class')
+print(result)
+.-----------------------------------------------------------------------------------------
+vLet’s understand the survival rate by gender, age and class.
+import matplotlib.pyplot as plt
+import seaborn as sns
+import pandas as pd
+import warnings
+warnings.filterwarnings('ignore')
+df = sns.load_dataset('titanic')
+diff_ages = pd.cut(df['age'], [0, 18, 80])
+result = df.pivot_table('survived', ['sex', diff_ages], 'class')
+print(result)
+.-----------------------------------------------------------------------------------------
+dist plot:-To create distribution plot we need to call distplot(p) function.
+ This will create histogram distribution of a dataset for a column.
+ We can plot the price of the ticket for every passenger
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+df = sns.load_dataset('titanic')
+sns.distplot(df['fare'], kde = False)
+plt.show()
+.-----------------------------------------------------------------------------------------
+box plot:-The box plot is used to display the distribution of the categorical data in
+the form of quartiles like Q1, Q2, Q3 and Q3.
+ The center of the box shows the median value.
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+df = sns.load_dataset('titanic')
+sns.boxplot(x='sex',y='age',data=df)
+plt.show()
+.-----------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+df = sns.load_dataset('titanic')
+sns.boxplot(x='sex',y='age',data=df,hue="survived")
+plt.show()
+.-----------------------------------------------------------------------------------------
+violin plot:-This type of plot is the same as the box plot, but with a violin plot, we
+can display all components corresponding to a data point.
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+df = sns.load_dataset('titanic')
+sns.violinplot(x='sex',y='age',data=df)
+plt.show()
+.-----------------------------------------------------------------------------------------
+import matplotlib.pyplot as plt
+import seaborn as sns
+import warnings
+warnings.filterwarnings('ignore')
+df = sns.load_dataset('titanic')
+sns.violinplot(x='sex',y='age',data=df,hue="survived")
+plt.show()
+.-----------------------------------------------------------------------------------------
+Word Cloud
+ A word cloud is a data visualization technique.
+ This technique displays most used words in large font and the least used
+words in small font.
+ It helps to get an idea about your text data
+import matplotlib.pyplot as plt
+from wordcloud import WordCloud
+text = "DataScience having good career path, DataScience iscutting edge technology, DataScience course is existing in nit,Daniel used to teach DataScience, if we learn DataScience then we will get good package"
+wc = WordCloud()
+wc.generate(text)
+plt.figure(figsize = (12, 12))
+plt.imshow(wc)
+plt.axis('off')
+plt.show()
+.-----------------------------------------------------------------------------------------
+Sunburst plot
+ A sunburst plot is a very popular data visualization technique used to
+visualize hierarchical data.
+ In every level of the hierarchy is represented by a ring or circle.
+ Whereas the innermost circle or ring is the highest level of the hierarchy
+
+import plotly.express as px
+data = px.data.tips()
+figure = px.sunburst(data, path = ["day", "sex"], values ="total_bill")
+figure.show()
+-------------------------------------------------------------------------------------------
+

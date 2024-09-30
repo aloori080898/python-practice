@@ -1,0 +1,23 @@
+Function with no parameter (or)calling the function
+---------------------------------------------------
+def m1():
+    print("Welcome the new house")
+m1()
+Function with parameter:-
+------------------------
+def m1(a):
+    print("Welcome the new house:",a)
+m1(14)
+Function without return
+-----------------------
+def balance():
+    print("My bank balance is:")
+balance()
+Function with return
+--------------------
+def balance():
+    print("My bank balance is:")
+    return 100
+b=balance()
+print(b)
+

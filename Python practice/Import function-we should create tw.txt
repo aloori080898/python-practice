@@ -1,0 +1,48 @@
+Import module keyword :-we should create two file save them with different names. 
+---------------------  In the frist file we should create variable or character like a=10,b=20 or name = "raju".in second file we should import the file by using print function.
+
+example
+--------
+frist file
+-----------
+a = 10
+b = 20
+second file
+-----------
+import call2
+print(call2.a)
+print(call2.b)
+
+"As" keyword called as Rename or alias existing module
+-----------------------------------------------
+we should create two file save them with different names.In the frist file we should create variable or character.in second file we should import additionmultiplication as admul the file by using print function.
+first file
+---------
+import additionmultiplication as am
+ 
+print(am.x)    
+am.addition(1,2)    
+am.multiplication(3, 4)
+
+second file
+-----------
+x = 10 
+def addition(a, b):
+	print("Sum of two values: ", (a+b)) 
+def multiplication(a, b):
+	print("Multiplication of two values: ",  (a*b)) 
+"from keyword
+-------------
+first file
+----------
+from additionmultiplication import x, addition 
+ 
+print(x)  
+addition(10,20) 
+second file
+------------
+x = 10,20 
+def addition(a, b):
+	print("Sum of two values: ", (a+b)) 
+def multiplication(a, b):
+	print("Multiplication of two values: ",  (a*b)) 

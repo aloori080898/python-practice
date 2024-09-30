@@ -1,0 +1,16 @@
+Bulitins function
+-----------------
+In Bulitins function contains print, 
+type, inter and also different types of the error in the python.
+
+import builtins as b
+print(dir(b))
+
+For string
+-----------
+print(dir(str))
+ 
+for list
+--------
+
+print(dir(list))

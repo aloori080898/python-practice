@@ -1,0 +1,38 @@
+list comprehension :- List comprehensions represents creating new lists from Iterable object  
+------------------   like a list, set, tuple, dictionary and range.
+Example:-1
+-----------
+values = [100,200,300,400,500,600]
+result = [value+2 for value in values]
+print(values)
+print(result)
+ 
+Example:-2
+-----------
+names = ["raju","praveen","vamshi"]
+result = [name.upper() for name in names]
+print(names)
+print(result)
+
+Example:-3
+-----------
+r = range(10,25)
+result = [value for value in r if value <20]
+print(r)
+print(result)
+
+Example:-4  :- 
+-----------
+r = range(10,25)
+for v in r:
+	print(v)
+result = [(value,v) for value in r if value <20 for v in r if v>20]
+print(r)
+print(result)
+   
+                             (or)
+for v in range(10,25):
+	if v<20:
+		for s in range(10,25):
+			if s>20:
+				print(v,s)

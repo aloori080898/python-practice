@@ -1,0 +1,44 @@
+package
+-------
+* first we should create a folder in that create a sub-folder
+* In the sub-folder we should create two files like demo1, demo2 and add __init__
+1st file:-demo1
+            import demo2
+             demo2.m1()
+2nd file:- demo2
+          def m1():
+          print("Hello")
+next step:- add   __init__    in subdir
+we can execute demo1
+
+  in the same folder  this sub-folders is called subdir
+*later we should create demo3 in maindir and add __init__
+
+In maindir   
+           1st file :- demo3
+
+           from test import demo2
+           demo2.m1()
+next step:- add __init__
+
+we execute demo3
+
+                     (or)
+  another method 
+    
+    Environment variable type in search box
+   in variable we should create Pythonpath
+   in system variable we should create pythonpath
+    "we should copy url link from the cmd
+
+another method:-
+
+IDLE type in search box
+
+import sys
+sys.path.append("we should copy url link from the cmd")
+import demo2
+demo2.m1()
+
+
+

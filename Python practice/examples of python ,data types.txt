@@ -1,0 +1,1037 @@
+n = 5
+for i in range(n+1):
+    for j in range(i,0,-1):
+        print("r",end= " ")
+    print()
+-----------------------------------------------------
+n = 3
+for i in range(n+1):
+    for j in range(i+1):
+        print("r",end= " ")
+    print()
+-----------------------------------------------------
+n = 7
+for i in range(n-1):
+    for j in range(n-3):
+        print("r",end= " ")
+    print()
+-----------------------------------------------------
+a = [10,20,30,40,50]
+a.append(60)
+print(a)
+----------------------------------------------------- 
+a = [10,20,30,40,50]
+a.insert(0,60)
+print(a)
+-----------------------------------------------------
+a = [10,10,30,40,50]
+b = a.count(10)
+print(b)
+------------------------------------------------------
+a = [10,20,30,40,50]
+a.remove(50)
+print(a)
+------------------------------------------------------
+a = [10,20,30,40,50]
+a.reverse()
+print(a)
+--------------------------------------------------------
+a = [50,40,20,10,30]
+a.sort()
+print(a)
+--------------------------------------------------------
+name = "raju"
+name.upper()
+print(a)
+--------------------------------------------------------
+name = "RAJU"
+name.lower()
+print(a)
+--------------------------------------------------------
+a =" java programming language"
+print(a.replace("java","python"))
+
+-----------------------------------------------------
+a =                 "welcome to india"         
+a.strip()
+print(a)
+------------------------------------------------------
+a = "Welcome to india"
+a.split()
+print(a)
+-------------------------------------------------------
+t = (10,20,20,30,30,40,50)
+t.count(20)
+print(t)
+
+------------------------------------------------------
+t = (10,20,20,30,30,40,50)
+t.index(20)
+print(t)
+-----------------------------------------------------
+s = {10,20}
+s.add((3,80))
+print(s)
+------------------------------------------------------
+s = {10,20,20,30,30,40,50}
+s.remove(30)
+print(s)
+------------------------------------------------------
+s = {10,20,20,30,30,40,50}
+s.clear()
+print(s)
+------------------------------------------------------
+i = 1
+while i<5:
+    i+= 1
+print(i)
+-------------------------------------------------------
+print("Please enter values from 0 to 30")
+x = int(input("Enter the values:"))
+if x==10:
+    print("You enter:",x)
+elif x==14:
+    print("You enter:",x)
+elif x==19:
+    print("You enter:",x)
+elif x==23:
+    print("You enter:",x)
+elif x==25:
+    print("You enter:",x)
+else:  
+    print("Beyoned the range")
+-------------------------------------------------------------
+def m1():
+    print("Hello")
+m1()
+-------------------------------------------------------------
+def m1(a):
+    print("Hello:",a)
+m1(10)
+-------------------------------------------------------------
+def m1(a,b):
+    print("Hello:",a,b)
+m1(10,20)
+--------------------------------------------------------------
+def m1(a,b):
+    print("Hello:",a,b)
+m1(a=10,b=20)
+--------------------------------------------------------------
+def m1(*p):
+    print("a value is:",*p)
+m1(10,40)
+--------------------------------------------------------------
+print("Hello")
+print("Good morning")
+--------------------------------------------------------------
+def wish():
+    print("Hello")
+    print("Good morning")
+    print("Hi")
+wish()
+--------------------------------------------------------------
+class Raju:
+    def watching(self):
+        print("watching movie")
+    def preparing(self):
+        print("preparing notes")
+    def playing(self):
+        print("playing volley ball")
+r = Raju()
+r.watching()
+r.preparing()
+r.playing()
+-----------------------------------------------------------------------------------------
+a=0
+while a<8:
+    a+=1
+    if a==3:
+       break
+    print(a)   
+---------------------------------------------------------------
+a=0
+while a<8:
+    a+=1
+    if a==3:
+       continue
+    print(a)   
+----------------------------------------------------------------
+a=0
+while a<8:
+    a+=1
+    if a==3:
+       pass
+    print(a)   
+--------------------------------------------------------------------
+def balance():
+    print("My bank balance is:")
+balance()
+--------------------------------------------------------------------
+def balance():
+    print("My bank balance is:")
+    return 100
+b=balance()
+print(b)
+--------------------------------------------------------------------
+add = lambda x:x+1
+result = add(10)
+print(result)
+--------------------------------------------------------------------
+add = lambda x,y:x+y
+result = add(10,30)
+print(result)
+--------------------------------------------------------------------
+values = [100,200,300,400,500,600]
+result = [value+2 for value in values]
+print(values)
+print(result)
+--------------------------------------------------------------------
+names = ["raju","praveen","vamshi"]
+result = [name.upper() for name in names]
+print(names)
+print(result)
+--------------------------------------------------------------------
+r = range(10,25)
+result = [value for value in r if value <20]
+print(r)
+print(result)
+--------------------------------------------------------------------
+r = range(10,25)
+for v in r:
+	print(v)
+result = [(value,v) for value in r if value <20 for v in r if v>20]
+print(r)
+print(result)
+--------------------------------------------------------------------
+price_tags = [100,200,300,400,500,600,700,800,900,1000]
+m = map(lambda x : x+2, price_tags)
+print(price_tags)
+print(list(m))
+--------------------------------------------------------------------
+values = [10,20,30,40,50,60,70,80,90,100]
+f = filter(lambda values : values < 50,values)
+print(values)
+print(list(f))
+--------------------------------------------------------------------
+monday_sales = [10,20,30,40,50]    reduce function
+print(sum(monday_sales))
+--------------------------------------------------------------------
+a = (10,20,30,[40,50],60,70)    Nested list
+print(a)
+--------------------------------------------------------------------
+a = (10,20,30,[40,50],60,70)     attribute error
+a.add[99]
+print(a)
+--------------------------------------------------------------------
+a = (10,20,30,[40,50],60,70)     attribute error
+a.Append()
+print(a)
+--------------------------------------------------------------------
+a = (10,20,30,[40,50],60,70)        name error
+a.Append()
+print(a)
+--------------------------------------------------------------------
+a = (10,20,30,40,50,10,10,10)
+b = [10,20,30,40,50,10,10,10]
+c = {10,20,30,40,10,10}
+print(a)
+print(b)
+print(c)
+print(len(a))
+print(len(b))
+print(len(c))
+----------------------------------------------------------------------------
+a = (10,20,30,40,50,10,10,10)
+b = [10,20,30,40,50,10,10,10]
+c = {10,20,30,40,10,10}
+print(a)
+print(b)
+print(c)
+print(type(a))
+print(type(b))
+print(type(c))
+-------------------------------------------------------------------------------
+a = (10,20,30,40)      immutable in nature
+print(a)
+a[0] = 99
+print(a)
+-----------------------------------------------------------------------------
+a = (10,20,[30,40,50],60,70,80)
+print(a[2].append(99))
+print(a)
+-----------------------------------------------------------------------------
+int(p),float(p),str(p),bool(p),list(p),tuple(p),set(p),dict(p),if,elif,else,break,continue,pass,for,while,return function,map,filter,reduce
+
+Accessing list by using for loop
+length function(p)
+
+count(p) method, append(p) method,insert() method,remove() method, reverse() method,sort() method,split()method,replace()method,upper()method,lower()method,strip()method,clear()method,index() method,add()method
+
+------------------------------------------------------------------------------------------
+import hashlib                               login id and password creation code
+import os
+
+USER_DATA_FILE = 'users.txt'eady exists. Please choose a different username.")
+        return False
+
+def hash_password(password):
+    # Hash the password using praveen-123456
+    return hashlib.praveen-123456(password.encode()).hexdigest()
+
+def register_user(praveen,123):
+    # Check if the user already exists
+    if user_exists(charan):
+        print("Username alr
+    
+    # Hash the password
+    hashed_password = hash_password(123)
+    
+    # Store the username and hashed password
+    with open(USER_DATA_FILE, 'a') as file:
+        file.write(f"{username} {hashed_password}\n")
+    
+    print("User registered successfully!")
+    return True
+
+def user_exists(username):
+    if not os.path.exists(USER_DATA_FILE):
+        return False
+    
+    with open(USER_DATA_FILE, 'r') as file:
+        for line in file:
+            stored_username, _ = line.strip().split()
+            if stored_username == username:
+                return True
+    return False
+
+def authenticate_user(username, password):
+    if not os.path.exists(USER_DATA_FILE):
+        print("No users are registered yet.")
+        return False
+    
+    hashed_password = hash_password(password)
+    
+    with open(USER_DATA_FILE, 'r') as file:
+        for line in file:
+            stored_username, stored_password = line.strip().split()
+            if stored_username == username and stored_password == hashed_password:
+                print("Login successful!")
+                return True
+    
+    print("Invalid username or password.")
+    return False
+
+def main():
+    while True:
+        print("\n1. Register")
+        print("\n2. Login")
+        print("\n3. Exit")
+        choice = input("Enter your choice: ")
+        
+        if choice == '1':
+            username = input("Enter a username: ")
+            password = input("Enter a password: ")
+            register_user(username, password)
+        elif choice == '2':
+            username = input("Enter your username: ")
+            password = input("Enter your password: ")
+            authenticate_user(username, password)
+        elif choice == '3':
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+if __name__ == '__main__':
+    main()
+---------------------------------------------------------------------------------------------------------------------
+Step-by-Step Guide:
+Setup User Data Storage:
+
+We will use a text file to store the username and hashed password.
+Hashing Passwords:
+
+It's important to hash passwords before storing them to ensure security. We'll use the hashlib library for this.
+Functions for Registration and Login:
+
+Functions to register a new user and to authenticate a user during login.
+---------------------------------------------------------------------------------------------------------------------
+Explanation:
+hash_password(password):
+
+This function takes a password, hashes it using SHA-256, and returns the hashed password.
+register_user(username, password):
+
+Checks if the user already exists.
+If not, hashes the password and stores the username and hashed password in the file.
+user_exists(username):
+
+Checks if the username already exists in the file.
+authenticate_user(username, password):
+
+Hashes the entered password and checks it against the stored hash in the file.
+If a match is found, it logs the user in.
+main():
+
+A simple menu-driven loop that allows users to register, login, or exit.
+
+---------------------------------------------------------------------------------------------------------------------
+
+django-admin startapp ecommerce
+cd ecommerce
+django-admin startapp store
+
+from django.db import models
+from django.contrib.auth.models import User
+
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+
+class Product(models.Model):
+    name = models.CharField(max_length=200)
+    category = models.ForeignKey(Category, related_name='products', on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    description = models.TextField()
+    image = models.ImageField(upload_to='products/')
+
+    def __str__(self):
+        return self.name
+
+class Cart(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.PositiveIntegerField(default=1)
+
+    def __str__(self):
+        return f"{self.user.username} - {self.product.name}"
+from django.contrib import admin
+from .models import Category, Product, Cart
+
+admin.site.register(Category)
+admin.site.register(Product)
+admin.site.register(Cart)
+
+from django.shortcuts import render, get_object_or_404, redirect
+from .models import Product, Category, Cart
+from django.contrib.auth import login, authenticate
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.decorators import login_required
+
+def product_list(request):
+    products = Product.objects.all()
+    return render(request, 'store/product_list.html', {'products': products})
+
+def product_detail(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    return render(request, 'store/product_detail.html', {'product': product})
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request, user)
+            return redirect('product_list')
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})
+
+@login_required
+def add_to_cart(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    cart, created = Cart.objects.get_or_create(user=request.user, product=product)
+    if not created:
+        cart.quantity += 1
+        cart.save()
+    return redirect('cart_detail')
+
+@login_required
+def cart_detail(request):
+    cart_items = Cart.objects.filter(user=request.user)
+    return render(request, 'store/cart_detail.html', {'cart_items': cart_items})
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.product_list, name='product_list'),
+    path('product/<int:pk>/', views.product_detail, name='product_detail'),
+    path('register/', views.register, name='register'),
+    path('add_to_cart/<int:pk>/', views.add_to_cart, name='add_to_cart'),
+    path('cart/', views.cart_detail, name='cart_detail'),
+]
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('store.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+]
+---------------------------------------------------------------------------------------------------------------------
+Step-by-Step Guide
+Set Up Django Project: Install Django and create a new project.
+Create a Django App: Set up a new app within the project.
+Define Models: Create models for products, categories, users, and cart.
+Set Up Admin Interface: Use Django's admin interface to manage products.
+Create Views: Handle displaying products, user registration, and cart functionality.
+Define URLs: Set up URL routes to connect views.
+Create Templates: Design HTML templates to render views.
+User Authentication: Implement registration, login, and logout.
+Cart Functionality: Add products to the cart, view the cart, and checkout.
+---------------------------------------------------------------------------------------------------------------------
+To make the e-commerce website fully functional, consider adding:
+
+Payment Integration: Integrate with payment gateways like Stripe or PayPal.
+Order Management: Track orders, order history, and status.
+Product Reviews: Allow users to leave reviews and ratings.
+Search and Filtering: Implement search functionality and product filters.
+User Profiles: Extend user model to include additional information like address, phone number, etc.
+Responsive Design: Ensure the website is mobile-friendly.
+------------------------------------------------------------------------------------------
+from urllib.parse import urlunparse, urlencode
+
+def create_url(scheme, netloc, path='', params='', query={}, fragment=''):
+    """
+    Create a URL from given components.
+
+    :param scheme: URL scheme ('https')
+    :param netloc: Network location (alooriraju.com')
+    :param path: Path within the domain (index.html')
+    :param params: Additional parameters (1623)
+    :param query: Dictionary of query parameters (e.g., {'raju': '10', 'praveen': '20'})
+    :param fragment: Fragment identifier ('section1')
+    :return: Constructed URL as a string
+    """
+    query_string = urlencode(query)
+    return urlunparse((scheme, netloc, path, params, query_string, fragment))
+
+# Example usage:
+url = create_url(
+    scheme='https',
+    netloc='alooriraju.com',
+    path='page.html',
+    query={'id': 10, 'user': 'raju'},
+    fragment='section2'
+)
+
+print(url)
+
+url = create_url(
+    scheme='https',
+    netloc='praveen.com',
+    path='page.html',
+    query={'id': 20, 'user': 'praveen'},
+    fragment='section1'
+)
+
+print(url)
+------------------------------------------------------------------------------------------
+Import Required Modules: We import urlunparse and urlencode from urllib.parse to help construct and encode the URL.
+
+Define create_url Function:
+
+The function takes several parameters corresponding to different parts of a URL.
+scheme: The URL scheme (e.g., http, https).
+netloc: The network location (e.g., example.com).
+path: The path within the domain (e.g., /subpage/anotherpage.html).
+params: Parameters (usually empty, included for completeness).
+query: A dictionary of query parameters (e.g., {'key1': 'value1', 'key2': 'value2'}).
+fragment: A fragment identifier (e.g., section2).
+Construct the Query String: Convert the dictionary of query parameters into a query string using urlencode.
+
+Construct the URL: Use urlunparse to combine all components into a single URL string.
+
+Return the URL: The constructed URL is returned as a string.
+
+---------------------------------------------------------------------------------------------------------------------
+print("\nNormal Pyramid")                  normal pyramid
+for i in range(5):
+    x = '*'
+    x = x*i
+    print(f'{x:^10}')
+-------------------------------------------------------------------------------------------
+print("\nInvert Pyramid")                  invert pyramid
+for i in range(5):
+    x = '*'
+    x = x*(5-i)
+    print(f'{x:^10}')
+
+-------------------------------------------------------------------------------------------
+print("\nRight sided Pyramid")              right sided pyramid
+for i in range(5):
+    x = '*'
+    x = x*1
+    print(f'{x:^10}')
+
+-------------------------------------------------------------------------------------------
+print("\nLeft side Pyramid")                 left side pyramid
+for i in range(5):
+    x = '*'
+    x = x*i
+    print(f'{x:^10}')
+-------------------------------------------------------------------------------------------
+print("\nRight sided Pyramid")                  right sided empty pyramid
+for i in range(5):
+    x = '*'
+    x = x*(i-8)
+    print(f'{x:^10}')
+---------------------------------------------------------------------------------------------------------------------
+a = {10,10,10,10,20,30,40,50}
+b = [10,10,20,30,40,40,50]
+c = (10,20,30,40,50,60,70)
+d = (10)
+e = (10,20)
+f = [10,20]
+f = [10]
+g = {}
+h = {10,20}
+print(a)
+print(b)
+print(c)
+print(d)
+print(e)
+print(f)
+print(g)
+print(h)
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+print(type(e))
+print(type(f))
+print(type(g))
+print(type(h))
+---------------------------------------------------------------------------------------------------------------------
+a = [10,20,30,40,50,60]           which can add the value
+print(a)
+print(a[0].append(44))
+print(a)
+-------------------------------------------------------------------------------------------
+g = {"cat":25,"dog":90}                       items in  dictionary
+for i,n in g.items():
+	print(n)
+-------------------------------------------------------------------------------------------
+g = {"cat":25,"dog":90}                             dictionary 
+for i in g:
+	print(n)
+-------------------------------------------------------------------------------------------
+g = {"cat":25,"dog":90}              values in dictionary
+print(g.values())
+
+-------------------------------------------------------------------------------------------
+g = {"cat":25,"dog":90}                      keys in dictionary
+print(g.keys())
+-------------------------------------------------------------------------------------------
+g = {"cat":25,"dog":90}                             keys,values in dictionary
+print(g.values(),g.keys())
+---------------------------------------------------------------------------------------------------------------------
+g = {"cat":25,"dog":90,"frog":28}
+for i in g:
+	print(g.keys())
+	print(g.values())
+	print(g)
+	print([25])
+	print(type(g))
+	print([90])
+	
+---------------------------------------------------------------------------------------------------------------------
+g = {"cat":25,"dog":90,"frog":28}
+for i,n in g.items():
+		print(i,n)
+
+-------------------------------------------------------------------------------------------
+g = {"cat":25,"dog":90,"frog":28}  case1:adding new values (or) key values pair in the dict
+print(g)                                        we can use syntax is d[key] = value
+g[29] = "cow"
+print(g)
+------------------------------------------------------------------------------------------
+g = {"cat":25,"dog":90,"frog":28}
+print(g)                          case2 : old variable replaced by new varaiable
+g[28]= "cow"
+print(g)
+
+-------------------------------------------------------------------------------------------
+g = {10:"cat",20:"dog",30:"frog"}
+print(g)                        we can delete key value pair from dict by using syntax
+del g[30]                                     del d[value(or) key]
+print(g)
+-------------------------------------------------------------------------------------------
+g = {10:"cat",20:"dog",30:"frog"}            clear() method in dictionary
+print(g)
+g.clear()
+print(g)
+-------------------------------------------------------------------------------------------
+g = {10:"cat",20:"dog",30:"frog"}                 keys() method in dictionary
+print(g)
+print(g.keys())
+-------------------------------------------------------------------------------------------
+g = {10:"cat",20:"dog",30:"frog"}                     values() method in dictionary
+print(g)
+print(g.values())
+-------------------------------------------------------------------------------------------
+g = {10:"cat",20:"dog",30:"frog"}                 Items() method by using for loop
+for i,k in g.items():
+	print(i,k)
+-------------------------------------------------------------------------------------------
+def sum (a,b):
+	return a % b                              example
+result = sum(5,5)
+print(result)
+-----------------------------------------------------------------------------------------
+class Employee:                                     constructor in oops
+	def __init__(self):      to create instance of variable (or) initialization purpose
+	    print("constructor is executed")
+emp = Employee()
+-----------------------------------------------------------------------------------------
+class Employee:                      we create class function and def function at a time 
+	def watching(self):                
+	    print("watching movie")
+def charan():
+	print("Hello")
+e = Employee()
+e.watching()
+charan()
+-----------------------------------------------------------------------------------------
+a = 10
+b = 10.28
+c = True
+d = (10,20)
+e = [10,30]
+f = {10,20}
+g = {}
+def m1():
+	print("Hi")
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+print(type(e))
+print(type(f))
+print(type(g))
+print(type(m1))     for  function type we should assign the variable      
+print(type(m1()))   for  none type we not should assign the variable
+-----------------------------------------------------------------------------------------
+my_string = "python programming"
+x = 0
+for i in my_string:
+    x = x + 1
+    print(my_string[0:x])
+for i in my_string:
+    x = x- 1
+    print(my_string[0:x])
+---------------------------------------------------------------------------------------------------------------------
+a = 5                       exponent operator (or)  **
+b = 4
+c = a**b
+print(c)
+---------------------------------------------------------------------------------------------------------------------
+from turtle import *
+import colorsys as cs
+bgcolor('black')
+hideturtle()
+goto(0,-50)
+speed(0)
+tracer(10)
+width(2)
+for i in range(24):
+    for j in range(14):
+        color(cs.hsv_to_rgb(j/15,i/25,1))
+        right(90)
+        circle(200-i*4,90)
+        left(90)
+        circle(200- i * 4,90)
+        right(180)
+        circle(50,24)
+done()
+---------------------------------------------------------------------------------------------------------------------
+class Raju:
+    def prasad(self):
+        print("constructor is executed")
+r = Raju()
+r.prasad()
+---------------------------------------------------------------------------------------------------------------------
+class Raju:
+    def prasad(self):
+        print("constructor is executed")
+    def praveen(self):
+        print("hello")
+r = Raju()
+r.prasad()
+r.praveen()
+---------------------------------------------------------------------------------------------------------------------
+class Employee:                                     
+	def __init__(self):     
+	    print("constructor is executed")
+emp1 = Employee()
+emp2 = Employee()
+---------------------------------------------------------------------------------------------------------------------
+class Employee:                                     
+    def __init__(self,sno):     
+        self.sno = sno
+        print("Employee id is:",self.sno)
+emp1 = Employee(19)
+emp2 = Employee(20)
+---------------------------------------------------------------------------------------------------------------------
+class Employee:                                     
+    def __init__(self,sno,sname,sadd):     
+        self.sno = sno
+        self.sname = sname
+        self.sadd = sadd
+        print("Employee id is:",self.sno)
+        print("Employee id is:",self.sname)
+        print("Employee id is:",self.sadd)
+emp1 = Employee(1,"karthik","hyd")
+emp2 = Employee(2,"vinay","Uk")
+emp3 = Employee(3,"praveen","usa")
+---------------------------------------------------------------------------------------------------------------------class Student:                                     
+    def __init__(self,sno,sname,sadd):     two class def function should match there position
+        self.sno = sno
+        self.sname = sname
+        self.sadd = sadd
+    def details(self):
+        print("student id is:",self.sno)
+        print("student name is:",self.sname)
+        print("student adress is:",self.sadd)
+s1 = Student(100,"karthik","hyd")
+s1.details()
+-------------------------------------------------------------------------------------------------------------------
+class Student:                                     
+    def __init__(self,sno,sname,sadd):     
+        self.sno = sno
+        self.sname = sname
+        self.sadd = sadd
+    def details(self):
+        print("student id is:",self.sno)
+        print("student name is:",self.sname)
+        print("student adress is:",self.sadd)
+s1 = Student(100,"karthik","hyd")
+s1.details()
+s2 = Student(100,"karthik","hyd")
+s2.details()
+
+--------------------------------------------------------------------------------------------------------------------
+class Student:                                     
+    def __init__(self,sno,sname,sadd):     
+        self.sno = sno
+        self.sname = sname
+        self.sadd = sadd
+    def details(self):
+        print("student id is:",self.sno)
+        print("student name is:",self.sname)
+        print("student adress is:",self.sadd)
+s1 = Student(100,"karthik","hyd")
+s1.details()
+s2 = Student(100,"karthik","hyd")
+s2.details()
+s3 = Student(100,"karthik","hyd")
+s3.details()
+s4 = Student(100,"karthik","hyd")
+s4.details()
+---------------------------------------------------------------------------------------------------------------------
+class Student:                                     
+    def __init__(self,sno,sname,sadd):     
+        self.sno = sno
+        self.sname = sname
+        self.sadd = sadd
+    def m1(self):
+        print("student id is:",self.sno)
+        print("student name is:",self.sname)
+        print("student adress is:",self.sadd)
+    def m2(self):
+        print()
+    def m3():
+        print("Hello")
+        print("hi")
+s1 = Student(100,"karthik","hyd")
+s1.m1()
+s2 = Student(100,"karthik","hyd")
+s2.m1()
+s3 = Student(100,"karthik","hyd")
+s3.m1()
+---------------------------------------------------------------------------------------------------------------------
+package in python
+
+
+we need to create a separate folder later we should program in one file and import in the 2nd file folder
+
+first file
+---------
+
+def fun1():
+    return 10
+def fun2():
+    return 20
+
+second file
+-----------
+import one1
+print(one1.fun1())
+print(one1.fun2())
+
+
+
+another method we can access
+------------------------------                 
+import sys
+sys.path.append(we access by using first method url)
+import one1
+print(one1.fun1())
+print(one1.fun2())
+-------------------------------------------------------------------------------------------
+import calendar                         calendar in python for one month
+yy = 2024 
+mm = 8
+print(calendar.month(yy, mm))
+-------------------------------------------------------------------------------------------
+import calendar                            for all months
+x = calendar.TextCalendar()
+print(x.pryear(2023))
+
+-------------------------------------------------------------------------------------------
+num = int(input("Enter a number"))               tables unlimited
+table = '\n'.join([f"{num} x {i} = {num*i}" for i in range(1,11)])
+print(table)
+
+-------------------------------------------------------------------------------------------
+class Employee:
+    def __init__(self,sno,sname):
+        self.sno = sno
+        self.sname = sname
+    def display(self):
+         print("employee no",{self.sno})
+         print("employee name",{self.sname})
+    def m1(self):
+        print("hello")
+        print("hi")
+e = Employee(101,"praveen")
+e1 = Employee(100,"raju")
+e.display()
+e.m1()
+-------------------------------------------------------------------------------------------
+print("Wellcome to quiz game !!")
+print('NOTE: if your spelling is incorrect then it is considered as wrong answer')
+score = 0
+question_no = 0
+playing = input('Do you want to play ? ').lower()
+if playing == 'yes':
+    question_no += 1
+    ques = input(f'\n{question_no}. what does CPU stand for? ').lower()
+    if ques == 'central processing unit':
+        score +=1
+        print('correct! you got 1 point')
+        
+    else:
+        print('Incorrect!')
+        print(f'current answer is --> central processing unit')
+
+    question_no += 1
+    ques = input(f'\n{question_no}. what does GPU stand for? ').lower()
+    
+    if ques == 'graphics processing unit':
+        score +=1
+        print('correct! you got 1 point')
+        
+    else:
+        print('Incorrect!')
+        print(f'current answer is --> graphics processing unit')
+
+    question_no += 1
+    ques = input(f'\n{question_no}. what does RAM stand for? ').lower()
+    
+    if ques == 'random access memory':
+        score +=1
+        print('correct! you got 1 point')
+        
+    else:
+        print('Incorrect!')
+        print(f'current answer is --> random access memory')
+
+    question_no += 1
+    ques = input(f'\n{question_no}. what does PSU stand for? ').lower()
+    
+    if ques == 'power supply unit':
+        score +=1
+        print('correct! you got 1 point')
+        
+    else:
+        print('Incorrect!')
+        print(f'current answer is --> power supply unit')
+
+    question_no += 1
+    ques = input(f'\n{question_no}. what does ROM stand for? ').lower()
+    
+    if ques == 'read only memory':
+        score +=1
+        print('correct! you got 1 point')
+        
+    else:
+        print('Incorrect!')
+        print(f'current answer is --> read only memory')
+
+
+else:
+    print('thankyou you are out of a game.')         qizzzzzz
+    quit()
+
+print(f'\nnumber of question is {question_no}')
+print(f'your score is {score}')
+try:
+    percentage = (score *100)/question_no
+except ZeroDivisionError:
+    print('0% quetions are correct')
+
+print(f'{percentage}% questions are correct.')
+-------------------------------------------------------------------------------------------
+# 1 to 100 units - 1.5Rs
+# 101 to 200 units - 2.5Rs     Generating current bill n pointg
+# 201 to 300 units - 4Rs
+# 300 to 350 units - 5Rs
+# Above 350 - Fixed charge 1500Rs
+
+units = float(input("Enter the Unit Consumed: "))
+
+if units > 0 and units <= 100:
+    payment = units * 1.5
+    fixedCharge = 25 # Extra charge
+elif units > 100 and units <= 200:
+    payment = (100 * 1.5) + (units - 100) * 2.5
+    fixedCharge = 50 # Extra charge
+elif units > 200 and units <= 300:
+    payment =  (100 * 1.5) + (200 - 100) * 2.5 + (units - 200) * 4
+    fixedCharge = 75 # Extra charge
+elif units > 300 and units <= 350:
+    payment = (100 * 1.5) + (200 - 100) * 2.5 + (300 - 200) * 4 + (units - 300) * 5   
+    fixedCharge = 100 # Extra charge
+else:
+    payment = 0
+    fixedCharge = 1500
+
+total = payment + fixedCharge
+
+print(f"Your Electricity Bill amount is {total:.2f}")
+-------------------------------------------------------------------------------------------
+class Student:                                     
+    def __init__(self,sno,sname,sadd):     
+        self.sno = sno
+        self.sname = sname
+        self.sadd = sadd
+    def m1(self):
+        print("student id is:",self.sno)
+        print("student name is:",self.sname)
+        print("student adress is:",self.sadd)
+s = Student(100,"karthik","hyd")
+s1 = Student(101,"raju","nirmal")
+s2 = Student(102,"vamshi","mali")
+s3 = Student(103,"krishna","sld")
+s.m1()
+s1.m1()
+s2.m1()     
+s3.m1()          
+-------------------------------------------------------------------------------------------
+
+
